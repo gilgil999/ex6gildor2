@@ -25,6 +25,14 @@ public class VarObj {
         this.overridable=true;//refers to the case where a new segment is created
     }
 
+    public void setAssigned(boolean assigned) {
+        isAssigned = assigned;
+    }
+
+    public void setOverridable(boolean overridable) {
+        this.overridable = overridable;
+    }
+
     public String getName() {
         return name;
     }
