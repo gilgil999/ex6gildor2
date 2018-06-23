@@ -6,9 +6,7 @@ import validator.GlobalSegment;
 public class MainParser {
 //needs to be singelton
 
-    public static enum varType {DOUBLE, INT, STRING, CHAR, BOOLEAN}
-
-    ;
+    public static enum varType {DOUBLE, INT, STRING, CHAR, BOOLEAN};
 
     public static GlobalSegment parse(String[] lines) {
         RawLine[] parsedlines = Readlines(lines);
@@ -19,6 +17,17 @@ public class MainParser {
         CodeSegment currentParent=globalSegment;
         for (int i=0; i<len; i++){
 
+
+            if(parsedlines[i].isOpen()){
+                CodeSegment newparent = parsedlines[i].transfom();
+                newparent.setParent(currentParent);
+                currentParent = newparent;
+            }else if(parsedlines[i].isClosed()){
+                currentParent = currentParent.getParent();
+
+            }else{
+
+            }
         }
 
         return null;
