@@ -12,7 +12,7 @@ public class FuncCall extends Singleline {
     public boolean isValid(ScopeObj scopeObj) {
         //checking if the function exists in the scope
         FunctionObj thisfunc = scopeObj.getFunction(funcname);
-        if(thisfunc==null){
+        if (thisfunc == null) {
             return false;
         }
 
@@ -20,14 +20,16 @@ public class FuncCall extends Singleline {
 
         //for every parameter, check if it is in the scope and whether it is in the
         //correct type
-        for(int i=0; i<paramnames.length; i++){
+        for (int i = 0; i < paramnames.length; i++) {
             VarObj currvar = scopeObj.getVar(paramnames[i]);
-            if(currvar==null){
+            if (currvar == null) {
                 return false;
             }
-            if(expectedParams[i].getType()!=currvar.getType())
+            if (expectedParams[i].getType() != currvar.getType()) {
+                //todo double and int can take boolean values sometimes
                 return false;
-            if(!expectedParams[i].getName().equals(currvar.getName()))
+            }
+            if (!expectedParams[i].getName().equals(currvar.getName()))
                 return false;
 
         }

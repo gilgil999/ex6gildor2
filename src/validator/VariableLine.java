@@ -1,8 +1,11 @@
 package validator;
 
-public class ReturnLine extends Singleline {
+public class VariableLine extends Singleline {
     @Override
+
+
+
     public boolean isValid(ScopeObj scopeObj) {
-        return scopeObj.isFunction();
+        return false;
     }
 }
