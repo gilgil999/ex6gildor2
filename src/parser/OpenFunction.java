@@ -1,8 +1,16 @@
 package parser;
 
 import validator.CodeSegment;
+import validator.FunctionObj;
+import validator.FunctionSegment;
 
 public class OpenFunction implements RawLine {
+    /**
+     * this class represents the first line of a function deceleration, it holds the value of the function name and
+     * parameters
+     */
+    private FunctionObj thisfunc;
+
     @Override
     public boolean isClosed() {
         return false;
@@ -15,7 +23,6 @@ public class OpenFunction implements RawLine {
 
     @Override
     public CodeSegment transfom() {
-        //todo
-        return null;
+        return new FunctionSegment(thisfunc);
     }
 }

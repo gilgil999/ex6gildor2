@@ -15,7 +15,11 @@ public class GlobalSegment extends CodeSegment {
 
 
     public boolean isValid(ScopeObj scopeObj) {
-        return false;
-
+        //no need for deepcopying the scopeobj
+        for (Checkable line : this.children){
+            if(!line.isValid(scopeObj))
+                return false;
+        }
+        return true;
     }
 }
