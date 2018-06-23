@@ -1,7 +1,6 @@
 package parser;
 
-import validator.CodeSegment;
-import validator.VarOperation;
+import validator.*;
 
 public class VarDecelaration implements RawLine {
     private boolean isFinal;
@@ -23,7 +22,7 @@ public class VarDecelaration implements RawLine {
     }
 
     @Override
-    public CodeSegment transfom() {
-        return null;
+    public Checkable transfom() {
+        return new VariableLine(isFinal,operations);
     }
 }
