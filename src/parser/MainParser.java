@@ -1,3 +1,5 @@
+package parser;
+
 public class MainParser {
 //needs to be singelton
 
@@ -5,7 +7,8 @@ public class MainParser {
 
     ;
 
-    public static GlobalSegment parse(String[] lines) {
+    public static validator.GlobalSegment parse(String[] lines) {
+        validator.GlobalSegment globalSegment = new validator.GlobalSegment();
 
 
         return null;

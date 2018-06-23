@@ -1,4 +1,8 @@
-public class OpenGlobal implements RawLine {
+package parser;
+
+import validator.CodeSegment;
+
+public class OpenCondition implements RawLine {
     @Override
     public boolean isClosed() {
         return false;
@@ -10,7 +14,8 @@ public class OpenGlobal implements RawLine {
     }
 
     @Override
-    public Segment transfom() {
+    public CodeSegment transfom() {
+        //todo
         return null;
     }
 }

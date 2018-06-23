@@ -1,3 +1,7 @@
+package parser;
+
+import validator.CodeSegment;
+
 public class CloseLine implements RawLine {
     @Override
     public boolean isClosed() {
@@ -10,7 +14,7 @@ public class CloseLine implements RawLine {
     }
 
     @Override
-    public Segment transfom() {
+    public CodeSegment transfom() {
         //todo
         return null;
     }
