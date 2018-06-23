@@ -40,7 +40,7 @@ public class MainParser {
         for (int i=0; i<len; i++){
             if(parsedlines[i].isOpen()){
                 //if a new codesegment is being created
-                CodeSegment newparent = parsedlines[i].transfom();
+                CodeSegment newparent =(CodeSegment) parsedlines[i].transfom();
                 newparent.setParent(currentParent);
                 currentParent.addLine(newparent);
                 currentParent = newparent;

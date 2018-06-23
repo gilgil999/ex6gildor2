@@ -69,6 +69,7 @@ public class ScopeObj {
      * @return the matching varObj with the name given
      */
     public VarObj getVar(String varname){
+        //supports varname ==null
         for(VarObj var : vars){
             if(var.getName().equals(varname))
                 return var;
