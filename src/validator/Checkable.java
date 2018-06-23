@@ -1,6 +1,6 @@
 package validator;
 
 public interface Checkable {
-    public boolean isValid(ScopeObj scopeObj);
+    boolean isValid(ScopeObj scopeObj);
 
 }

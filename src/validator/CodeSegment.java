@@ -11,7 +11,8 @@ public abstract class CodeSegment implements Checkable{
     @Override
     public boolean isValid(ScopeObj scopeObj) {
         //maybe we can check the validity before iterating over the
-
+        System.out.println("i dont know what to do here");
+        return true;
     }
 
     public CodeSegment(ArrayList<Checkable> children) {

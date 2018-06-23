@@ -15,6 +15,13 @@ public class VarObj {
         this.isFinal = isFinal;
     }
 
+    public VarObj(VarObj tocopy){
+        this.name=tocopy.getName();
+        this.type = tocopy.getType();
+        this.isAssigned= tocopy.isAssigned();
+        this.isFinal=tocopy.isFinal();
+    }
+
     public String getName() {
         return name;
     }
