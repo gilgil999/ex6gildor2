@@ -19,15 +19,36 @@ public class MainParser {
 
 
             if(parsedlines[i].isOpen()){
+                //if a new codesegment is being created
                 CodeSegment newparent = parsedlines[i].transfom();
                 newparent.setParent(currentParent);
+                currentParent.addLine(newparent);
                 currentParent = newparent;
             }else if(parsedlines[i].isClosed()){
-                currentParent = currentParent.getParent();
-
+                //a codesegment end and we now we go back to adding stuff to its parent
+                if(currentParent == null)
+                    //we are already in the globalsegment
+                    //todo exception
+                    System.out.println("a closing without an opening");
+                else
+                    currentParent = currentParent.getParent();
             }else{
-
+                //adding a singleline to the current codesegment
+                currentParent.addLine(parsedlines[i].transfom());
             }
+
+            //check if a segment is left open
+            if(currentParent.getParent()!=null)
+                //todo exception
+                System.out.println("an opening without a closing");
+            if(globalSegment==currentParent)
+                //should apply, not a neccessary check
+                return globalSegment;
+            System.out.println("currentparent is not globalsegment");
+            return null;
+
+
+
         }
 
         return null;

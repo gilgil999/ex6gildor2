@@ -20,7 +20,7 @@ public abstract class CodeSegment implements Checkable{
         return parent;
     }
 
-    public void AddLline(Checkable line){
+    public void addLine(Checkable line){
         this.children.add(line);
     }
 
