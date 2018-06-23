@@ -6,12 +6,8 @@ public class MainParser {
     ;
 
     public static GlobalSegment parse(String[] lines) {
-//        for line in lines:
-//            readline()
-//                    if cl;oses
-//                if open
-//                transforsmmmsmmmsmmsmsmmsdodrodorodorododorgil
-        
+
+
         return null;
     }
 
