@@ -6,7 +6,7 @@ import validator.GlobalSegment;
 public class MainParser {
 //needs to be singelton
 
-    public enum varType {DOUBLE, INT, STRING, CHAR, BOOLEAN};
+    public enum varType {DOUBLE, INT, STRING, CHAR, BOOLEAN,UNKNOWN}
 
     public static GlobalSegment parse(String[] lines) {
         RawLine[] parsedlines = Readlines(lines);
