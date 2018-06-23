@@ -36,22 +36,18 @@ public class MainParser {
                 //adding a singleline to the current codesegment
                 currentParent.addLine(parsedlines[i].transfom());
             }
-
-            //check if a segment is left open
-            if(currentParent.getParent()!=null)
-                //todo exception
-                System.out.println("an opening without a closing");
-            if(globalSegment==currentParent)
-                //should apply, not a neccessary check
-                return globalSegment;
-            System.out.println("currentparent is not globalsegment");
-            return null;
-
-
-
         }
 
+        //check if a segment is left open
+        if(currentParent.getParent()!=null)
+            //todo exception
+            System.out.println("an opening without a closing");
+        if(globalSegment==currentParent)
+            //should apply, not a neccessary check
+            return globalSegment;
+        System.out.println("currentparent is not globalsegment");
         return null;
+
     }
 
     private static RawLine[] Readlines(String[] lines) {
