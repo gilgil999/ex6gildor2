@@ -6,7 +6,7 @@ import validator.GlobalSegment;
 public class MainParser {
 //needs to be singelton
 
-    public static enum varType {DOUBLE, INT, STRING, CHAR, BOOLEAN};
+    public enum varType {DOUBLE, INT, STRING, CHAR, BOOLEAN};
 
     public static GlobalSegment parse(String[] lines) {
         RawLine[] parsedlines = Readlines(lines);
@@ -16,8 +16,6 @@ public class MainParser {
         int len=parsedlines.length;
         CodeSegment currentParent=globalSegment;
         for (int i=0; i<len; i++){
-
-
             if(parsedlines[i].isOpen()){
                 //if a new codesegment is being created
                 CodeSegment newparent = parsedlines[i].transfom();
