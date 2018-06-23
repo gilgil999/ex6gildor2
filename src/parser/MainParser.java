@@ -1,8 +1,15 @@
 package parser;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
 import validator.CodeSegment;
 import validator.GlobalSegment;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainParser {
 //needs to be singelton
@@ -25,10 +32,49 @@ public class MainParser {
 
 
 
+	/**
+	 * this function convert text file to String's array.
+	 *
+	 * @param path the absolute/relative path of the file.
+	 * @return array of strings that consist of the text lines.
+	 * @throws IOException - if the given path did not match an actual file to read
+	 */
+	public static ArrayList<String> fileToText(String path) throws IOException {
+		FileReader reader = new FileReader(path); // File not found exception if not file - Type 2 error
+		BufferedReader in = new BufferedReader(reader);
+		String line;
+		ArrayList<String> list = new ArrayList<>();
+		while ((line = in.readLine()) != null) { // if there are new lines - add them.
+			list.add(line);
+		}
+		return list;
+	}
 
-
+	/**
+	 * this function receive ArrayList of Strings and delete extra spaces, empty lines and comment lines
+	 * @param text the text you want to parse
+	 * @return the new cleaner text
+	 */
+	public static ArrayList<String> primaryParsing(ArrayList<String> text){
+		ArrayList<String> newText = new ArrayList<String>();
+		Pattern pattern = Pattern.compile("[\\s]+");
+		Matcher matcher;
+		for (String row :text) {
+			matcher = pattern.matcher(row);
+			row = matcher.replaceAll(" ");
+			if (row.equals(" ") || row.equals("") || (row.length()>=2 && row.substring(0,2).equals("//"))){
+				continue;
+			}
+			else{
+				newText.add(row);
+			}
+		}
+		return newText;
+	}
 
     public enum varType {DOUBLE, INT, STRING, CHAR, BOOLEAN,UNKNOWN}
+    
+
 
     public static GlobalSegment parse(String[] lines) {
         RawLine[] parsedlines = Readlines(lines);
@@ -89,4 +135,3 @@ public class MainParser {
     }
 
 }
-=
