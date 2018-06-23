@@ -7,6 +7,13 @@ public abstract class CodeSegment implements Checkable{
     protected ArrayList<Checkable> children;
     protected CodeSegment parent;
 
+
+    @Override
+    public boolean isValid(ScopeObj scopeObj) {
+        //maybe we can check the validity before iterating over the
+
+    }
+
     public CodeSegment(ArrayList<Checkable> children) {
         this.children = children;
     }
@@ -28,4 +35,6 @@ public abstract class CodeSegment implements Checkable{
     public void setParent(CodeSegment parent) {
         this.parent = parent;
     }
+
+
 }
