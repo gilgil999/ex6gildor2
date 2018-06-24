@@ -86,6 +86,7 @@ public class ScopeObj {
         return null;
     }
 
+
     /**
      * updating the scope with an array of parameters, for each it will either override of add to the scope.
      *
@@ -94,6 +95,12 @@ public class ScopeObj {
     public void update(VarObj[] parameters) {
         for (int i = 0; i < parameters.length; i++) {
             update(parameters[i]);
+
+        }
+    }
+    public void update(ArrayList<VarObj> parameters){
+        for (int i=0;i<parameters.size();i++){
+            update(parameters.get(i));
 
         }
     }
