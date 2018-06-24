@@ -18,6 +18,11 @@ public abstract class CodeSegment implements Checkable {
         return true;
     }
 
+    public CodeSegment(ArrayList<Checkable> children, CodeSegment parent) {
+        this.children = children;
+        this.parent = parent;
+    }
+
     public CodeSegment(ArrayList<Checkable> children) {
         this.children = children;
     }
