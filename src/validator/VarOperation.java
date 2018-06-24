@@ -10,6 +10,11 @@ public class VarOperation {
         this.destination=new VarInstance(destname,desttype);
     }
 
+    public VarOperation(VarInstance source, VarInstance destination) {
+        this.source = source;
+        this.destination = destination;
+    }
+
     public VarInstance getSource() {
         return source;
     }
