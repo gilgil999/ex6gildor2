@@ -28,9 +28,9 @@ public class Tester {
 //		s.update(a);
 		s.update(b);
 
-		VarInstance dest = new VarInstance("c", MainParser.varType.BOOLEAN);
+		VarInstance dest = new VarInstance("c", MainParser.varType.UNKNOWN);
 		VarInstance src = new VarInstance("b", MainParser.varType.UNKNOWN);
-		src=null;
+//		src=null;
 //		VarInstance[] arr = new VarInstance[2];
 //		arr[0]=at;
 //		arr[1]=bt
