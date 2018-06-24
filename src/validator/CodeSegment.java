@@ -1,8 +1,11 @@
 package validator;
+
+import parser.MainParser;
+
 import java.util.*;
 
 
-public abstract class CodeSegment implements Checkable{
+public abstract class CodeSegment implements Checkable {
 
     protected ArrayList<Checkable> children;
     protected CodeSegment parent;
@@ -28,7 +31,7 @@ public abstract class CodeSegment implements Checkable{
         return parent;
     }
 
-    public void addLine(Checkable line){
+    public void addLine(Checkable line) {
         this.children.add(line);
     }
 
@@ -37,5 +40,22 @@ public abstract class CodeSegment implements Checkable{
         this.parent = parent;
     }
 
+    public static MainParser.varType getVarInstanceType(VarInstance var, ScopeObj scopeObj) {
+        if (var == null) {
+            System.out.println("var is null");
+            return null;
+        }
+        MainParser.varType type;
+        VarObj varObj = scopeObj.getVar(var.getName());
+        if (varObj == null) {
+            System.out.println("var is not in scope");
+            type = var.getType();
+        } else {
+            System.out.println("var is in scope");
+            type = varObj.getType();
+        }
+        return type;
+
+    }
 
 }

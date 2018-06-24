@@ -2,11 +2,13 @@ package parser;
 
 import validator.*;
 
+import java.util.ArrayList;
+
 public class VarDecelaration implements RawLine {
     private boolean isFinal;
-    private VarOperation[] operations;
+    private ArrayList<VarOperation> operations;
 
-    public VarDecelaration(boolean isFinal, VarOperation[] operations) {
+    public VarDecelaration(boolean isFinal, ArrayList<VarOperation> operations) {
         this.isFinal = isFinal;
         this.operations = operations;
     }

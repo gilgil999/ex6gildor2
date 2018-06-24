@@ -2,27 +2,36 @@ package validator;
 
 import parser.MainParser;
 
-public class VarObj {
-    private String name;
-    private MainParser.varType type;
+public class VarObj extends VarInstance{
+
     private boolean isAssigned;
     private boolean isFinal;
     private boolean overridable;
 
     public VarObj(String name, MainParser.varType type, boolean isAssigned, boolean isFinal, boolean overridable) {
-        this.name = name;
-        this.type = type;
+        super(name,type);
         this.isAssigned = isAssigned;
         this.isFinal = isFinal;
         this.overridable=overridable;
     }
 
     public VarObj(VarObj tocopy){
-        this.name=tocopy.getName();
-        this.type = tocopy.getType();
+        super(tocopy.getName(),tocopy.getType());
         this.isAssigned= tocopy.isAssigned();
         this.isFinal=tocopy.isFinal();
         this.overridable=true;//refers to the case where a new segment is created
+
+    }
+
+    public VarObj(String name, MainParser.varType type){
+        super(name, type);
+        this.isAssigned = false;
+        this.isFinal = false;//arbitrary initial value
+        this.overridable=false;
+    }
+
+    public void setFinal(boolean aFinal) {
+        isFinal = aFinal;
     }
 
     public void setAssigned(boolean assigned) {
@@ -33,13 +42,7 @@ public class VarObj {
         this.overridable = overridable;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public MainParser.varType getType() {
-        return type;
-    }
 
     public boolean isAssigned() {
         return isAssigned;

@@ -321,5 +321,16 @@ public class MainParser {
 		}
 		return varType;
 	}
+	public static boolean isCompatible(MainParser.varType arg1, MainParser.varType arg2) {
+		if (arg1 == null || arg2 == null || arg1 == MainParser.varType.UNKNOWN || arg2 == MainParser.varType.UNKNOWN)
+			return false;
+		if (arg1 == MainParser.varType.BOOLEAN)
+			return arg2 == MainParser.varType.BOOLEAN || arg2 == MainParser.varType.INT
+					|| arg2 == MainParser.varType.DOUBLE;
+		if (arg1 == MainParser.varType.DOUBLE)
+			return arg2 == MainParser.varType.INT
+					|| arg2 == MainParser.varType.DOUBLE;
+		return arg1 == arg2;
+	}
 
 }

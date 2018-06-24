@@ -12,33 +12,40 @@ public class ScopeObj {
     public ScopeObj(ArrayList<VarObj> vars, ArrayList<FunctionObj> funcs, boolean isFunction) {
         this.vars = vars;
         this.funcs = funcs;
-        this.isFunction=isFunction;
+        this.isFunction = isFunction;
+    }
+
+    public ScopeObj() {
+        this.vars=new ArrayList<>();
+        this.funcs=new ArrayList<>();
+        this.isFunction=false;
     }
 
     /**
      * constructs a copy of tocopy
+     *
      * @param tocopy
      */
     public ScopeObj(ScopeObj tocopy) {
-        ArrayList<VarObj> tocopyvars=tocopy.vars;
+        ArrayList<VarObj> tocopyvars = tocopy.vars;
         ArrayList<FunctionObj> tocopyfuncs = tocopy.funcs;
 
-        int varlen=tocopyvars.size();
-        int funclen=tocopyfuncs.size();
+        int varlen = tocopyvars.size();
+        int funclen = tocopyfuncs.size();
 
-        ArrayList<VarObj> newvars =new ArrayList<>();
-        ArrayList<FunctionObj> newfuncs =new ArrayList<>();
+        ArrayList<VarObj> newvars = new ArrayList<>();
+        ArrayList<FunctionObj> newfuncs = new ArrayList<>();
 
-        for(int i=0; i<varlen;i++){
+        for (int i = 0; i < varlen; i++) {
             newvars.add(new VarObj(tocopyvars.get(i)));
         }
-        for(int i=0;i<funclen;i++){
+        for (int i = 0; i < funclen; i++) {
             newfuncs.add(new FunctionObj(tocopyfuncs.get(i)));
         }
 
-        this.vars=newvars;
-        this.funcs=newfuncs;
-        this.isFunction=tocopy.isFunction;
+        this.vars = newvars;
+        this.funcs = newfuncs;
+        this.isFunction = tocopy.isFunction;
     }
 
     public boolean isFunction() {
@@ -51,12 +58,13 @@ public class ScopeObj {
 
     /**
      * finds and returns the FunctionObj with the name matching the funcname.
+     *
      * @param funcname
      * @return
      */
-    public FunctionObj getFunction(String funcname){
-        for(FunctionObj func : funcs){
-            if(func.getName().equals(funcname))
+    public FunctionObj getFunction(String funcname) {
+        for (FunctionObj func : funcs) {
+            if (func.getName().equals(funcname))
                 return func;
         }
         return null;
@@ -65,13 +73,14 @@ public class ScopeObj {
 
     /**
      * finds and returns the VarObj with the name matching to varname
+     *
      * @param varname
      * @return the matching varObj with the name given
      */
-    public VarObj getVar(String varname){
+    public VarObj getVar(String varname) {
         //supports varname ==null
-        for(VarObj var : vars){
-            if(var.getName().equals(varname))
+        for (VarObj var : vars) {
+            if (var.getName().equals(varname))
                 return var;
         }
         return null;
@@ -80,10 +89,11 @@ public class ScopeObj {
 
     /**
      * updating the scope with an array of parameters, for each it will either override of add to the scope.
+     *
      * @param parameters
      */
     public void update(VarObj[] parameters) {
-        for (int i=0;i<parameters.length;i++){
+        for (int i = 0; i < parameters.length; i++) {
             update(parameters[i]);
 
         }
@@ -98,16 +108,21 @@ public class ScopeObj {
     /**
      * updates the currnet scope with the variable parameter, if there is already a variable with that name in the scope
      * then it will be overridden. otherwise it will be added to the current scope.
+     *
      * @param parameter
      */
-    private void update(VarObj parameter) {
-        for (VarObj var : vars){
-            if(var.getName().equals(parameter.getName())){
+    public void update(VarObj parameter) {
+        for (VarObj var : vars) {
+            if (var.getName().equals(parameter.getName())) {
                 vars.remove(var);
                 vars.add(parameter);
                 return;
             }
         }
         vars.add(parameter);
+    }
+
+    public void addFundtion(FunctionObj func){
+        this.funcs.add(func);
     }
 }
