@@ -21,25 +21,25 @@ public class Tester {
 //		MainParser.primaryParsing(text);
 //		RawLine line = MainParser.treatOpen(" if (a || 4 || 4.1 && b");
 
-		VarObj a = new VarObj("a", MainParser.varType.DOUBLE,true,false,true);
-		VarObj b = new VarObj("b", MainParser.varType.DOUBLE,true,false,true);
+		VarObj a = new VarObj("a", MainParser.varType.DOUBLE,true,true,true);
+		VarObj b = new VarObj("b", MainParser.varType.INT,true,false,true);
 
 		ScopeObj s= new ScopeObj();
 //		s.update(a);
 		s.update(b);
 
-		VarInstance dest = new VarInstance("c", MainParser.varType.UNKNOWN);
-		VarInstance src = new VarInstance("b", MainParser.varType.UNKNOWN);
+		VarInstance dest = new VarInstance("c", MainParser.varType.INT);
+		VarInstance src = new VarInstance("b", MainParser.varType.STRING);
 //		src=null;
 //		VarInstance[] arr = new VarInstance[2];
 //		arr[0]=at;
 //		arr[1]=bt
 
-		VarOperation varOperation = new VarOperation(src,dest);
+		VarOperation varOperation = new VarOperation(null,dest);
 		VarOperation[] arr = new VarOperation[1];
 		arr[0]=varOperation;
 
-		VariableLine vl=new VariableLine(false,arr);
+		VariableLine vl=new VariableLine(true,arr);
 		System.out.println(vl.isValid(s));
 		System.out.println("gil");
 

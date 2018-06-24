@@ -121,4 +121,8 @@ public class ScopeObj {
         }
         vars.add(parameter);
     }
+
+    public void addFundtion(FunctionObj func){
+        this.funcs.add(func);
+    }
 }

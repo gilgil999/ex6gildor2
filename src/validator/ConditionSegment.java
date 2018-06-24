@@ -43,9 +43,7 @@ public class ConditionSegment extends CodeSegment {
      * @return
      */
     private boolean checkvar(VarInstance var, ScopeObj scopeObj) {
-        MainParser.varType type = scopeObj.getVar(var.getName()).getType();
-        if(type==null)
-            type=var.getType();
+        MainParser.varType type = CodeSegment.getVarInstanceType(var, scopeObj);
         return isCompatible(MainParser.varType.BOOLEAN, type);
     }
 }

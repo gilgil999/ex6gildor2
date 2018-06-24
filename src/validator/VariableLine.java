@@ -10,9 +10,9 @@ public class VariableLine extends Singleline {
 
 
     private boolean isFinal;
-    private VarOperation[] operations;
+    private ArrayList<VarOperation> operations;
 
-    public VariableLine(boolean isFinal, VarOperation[] operations) {
+    public VariableLine(boolean isFinal, ArrayList<VarOperation> operations) {
         this.isFinal = isFinal;
         this.operations = operations;
     }
@@ -21,7 +21,6 @@ public class VariableLine extends Singleline {
     public boolean isValid(ScopeObj scopeObj) {
 
 
-        ArrayList<String> tobeadded = new ArrayList<>();
         for (VarOperation operation : operations) {
             if (operation.getDestination().getName() == null) {
                 System.out.println("no name to dest");
@@ -71,7 +70,7 @@ public class VariableLine extends Singleline {
                     }
                     //checking compatibility
                     if (!isCompatible(dest.getType(), source.getType())) {
-                        System.out.println("typs are not compatible");
+                        System.out.println("typs are not compatible1");
                         return false;
                     }
                     //they are compatible, updating VarObj status to match as assigned variable
@@ -79,7 +78,7 @@ public class VariableLine extends Singleline {
                 } else {
                     //the type of source is defined, meaning that it is a constant
                     if (!isCompatible(dest.getType(), operation.getSource().getType())) {
-                        System.out.println("typs are not compatible");
+                        System.out.println("typs are not compatible2");
                         return false;
 
                     }
@@ -121,7 +120,8 @@ public class VariableLine extends Singleline {
                 }
 
                 //the source exists
-                if (operation.getSource().getType() == MainParser.varType.UNKNOWN) {
+                if (operation.getSource().getType() == MainParser.varType.UNKNOWN) {//when assigning values to the
+                    //operation variables, their type has to be UNKNOWN
                     VarObj source;
 
                     //it is a variable, it has to be in the scope
@@ -142,7 +142,7 @@ public class VariableLine extends Singleline {
                     }
                     //checking compatibility
                     if (!isCompatible(dest.getType(), source.getType())) {
-                        System.out.println("types are not compatible");
+                        System.out.println("types are not compatible3");
                         return false;
                     }
                     //they are compatible, updating VarObj status to match as assigned variable
@@ -150,7 +150,7 @@ public class VariableLine extends Singleline {
                 } else {
                     //the type of source is defined, meaning that it is a constant
                     if (!isCompatible(dest.getType(), operation.getSource().getType())) {
-                        System.out.println("types are not compatible");
+                        System.out.println("types are not compatible4");
                         return false;
                     }
                 }
@@ -163,57 +163,6 @@ public class VariableLine extends Singleline {
         return true;
     }
 
-    //    /**
-//     * this function gets a VarOperation object, a scope and a String arraylist and
-//     * @param operation
-//     * @param scopeObj
-//     * @param tobeadded
-//     */
-//    private boolean processOperation(VarOperation operation, ScopeObj scopeObj, ArrayList<String> tobeadded) {
-//
-//
-//
-//
-//        if(operation.getDestination().getType()==null){
-//            //this is an assignment
-//            //both of the variables needs to be already declared
-//            if(isFinal)//if there is a final deceleration than you must return false
-//                return false;
-//            VarObj source=scopeObj.getVar(operation.getSourcename());
-//            VarObj dest=scopeObj.getVar(operation.getDestname());
-//            MainParser.varType desttype;
-//            MainParser.varType sourcetype;
-//            if(dest==null)//assigned value not in scope
-//                return false;
-//            desttype=dest.getType();
-//            if(source==null)//
-//                sourcetype=operation.getSourcetype();
-//            else
-//                sourcetype=source.getType();
-//            if(!isCompatible(desttype,sourcetype))
-//                return false;
-//            //now dest is already defined and source is either defined as well or it is a constant, either way they are both compatible
-//            //we now need to check if it source is assigned
-//            if(!source.isAssigned())
-//                return false;
-//
-//            dest.setAssigned(true);
-//        }else {
-//            //this is a definition
-//            VarObj source=scopeObj.getVar(operation.getSourcename());
-//            VarObj dest=scopeObj.getVar(operation.getDestname());
-//
-//            if(!dest.isOverridable())
-//                return false;//trying no define a non overridable
-//
-//
-//            if(source==null){
-//                //constant defintion
-//
-//            }
-//
-//        }
-//        return true;
-//    }
+
 
 }

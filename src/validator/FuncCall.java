@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class FuncCall extends Singleline {
 
     private String funcname;
-    private String[] paramnames;
+    private ArrayList<VarInstance> params;
 
 
     @Override
@@ -22,24 +22,23 @@ public class FuncCall extends Singleline {
 
         //for every parameter, check if it is in the scope and whether it is in the
         //correct type
-        for (int i = 0; i < paramnames.length; i++) {
-            VarObj currvar = scopeObj.getVar(paramnames[i]);
-            if (currvar == null) {
+        for (int i = 0; i < params.size(); i++) {
+            MainParser.varType type = CodeSegment.getVarInstanceType(params.get(i), scopeObj);
+            if (thisfunc.getParameters().get(i) == null) {
+                System.out.println("thisfunc has less paramentes than given");
                 return false;
             }
-            if (expectedParams.get(i).getType() != currvar.getType()) {
-                //todo double and int can take boolean values sometimes
-                return false;
+            if (MainParser.isCompatible(thisfunc.getParameters().get(i).getType(), type)) {
+                System.out.println("this var is comopatible");
             }
-            if (!expectedParams.get(i).getName().equals(currvar.getName()))
-                return false;
+
 
         }
         return true;
     }
 
-    public FuncCall(String funcname, String[] paramnames) {
+    public FuncCall(String funcname, ArrayList<VarInstance> params) {
         this.funcname = funcname;
-        this.paramnames = paramnames;
+        this.params = params;
     }
 }

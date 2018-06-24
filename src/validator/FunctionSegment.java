@@ -8,7 +8,9 @@ public class FunctionSegment extends CodeSegment {
         this.thisfunc=funcobj;
     }
 
-
+    public FunctionObj getThisfunc() {
+        return thisfunc;
+    }
 
     /**
      * return whether this function segment is valid of not, it preforms validity checks on all of its children,
