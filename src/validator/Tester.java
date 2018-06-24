@@ -36,8 +36,9 @@ public class Tester {
 //		arr[1]=bt
 
 		VarOperation varOperation = new VarOperation(null,dest);
-		VarOperation[] arr = new VarOperation[1];
-		arr[0]=varOperation;
+		ArrayList<VarOperation> arr = new ArrayList<VarOperation>();
+
+		arr.add(varOperation);
 
 		VariableLine vl=new VariableLine(true,arr);
 		System.out.println(vl.isValid(s));
