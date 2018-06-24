@@ -3,31 +3,18 @@ package validator;
 import parser.MainParser;
 
 public class VarOperation {
-    private MainParser.varType sourcetype;
-    private MainParser.varType desttype;
-    private String sourcename;
-    private String destname;
-
+    private VarInstance source;
+    private VarInstance destination;
     public VarOperation(MainParser.varType sourcetype, MainParser.varType desttype, String sourcename, String destname) {
-        this.sourcetype = sourcetype;
-        this.desttype = desttype;
-        this.sourcename = sourcename;
-        this.destname = destname;
+        this.source=new VarInstance(sourcename,sourcetype);
+        this.destination=new VarInstance(destname,desttype);
     }
 
-    public MainParser.varType getSourcetype() {
-        return sourcetype;
+    public VarInstance getSource() {
+        return source;
     }
 
-    public MainParser.varType getDesttype() {
-        return desttype;
-    }
-
-    public String getSourcename() {
-        return sourcename;
-    }
-
-    public String getDestname() {
-        return destname;
+    public VarInstance getDestination() {
+        return destination;
     }
 }

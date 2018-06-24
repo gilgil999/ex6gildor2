@@ -93,7 +93,7 @@ public class ScopeObj {
      * then it will be overridden. otherwise it will be added to the current scope.
      * @param parameter
      */
-    private void update(VarObj parameter) {
+    public void update(VarObj parameter) {
         for (VarObj var : vars){
             if(var.getName().equals(parameter.getName())){
                 vars.remove(var);
