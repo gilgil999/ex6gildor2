@@ -2,6 +2,8 @@ package validator;
 
 import parser.MainParser;
 
+import java.util.ArrayList;
+
 public class FuncCall extends Singleline {
 
     private String funcname;
@@ -16,7 +18,7 @@ public class FuncCall extends Singleline {
             return false;
         }
 
-        VarObj[] expectedParams = thisfunc.getParameters();
+        ArrayList<VarObj> expectedParams = thisfunc.getParameters();
 
         //for every parameter, check if it is in the scope and whether it is in the
         //correct type
@@ -25,11 +27,11 @@ public class FuncCall extends Singleline {
             if (currvar == null) {
                 return false;
             }
-            if (expectedParams[i].getType() != currvar.getType()) {
+            if (expectedParams.get(i).getType() != currvar.getType()) {
                 //todo double and int can take boolean values sometimes
                 return false;
             }
-            if (!expectedParams[i].getName().equals(currvar.getName()))
+            if (!expectedParams.get(i).getName().equals(currvar.getName()))
                 return false;
 
         }

@@ -1,8 +1,11 @@
 package parser;
 
 import validator.CodeSegment;
+import validator.FunctionObj;
 import validator.GlobalSegment;
 import parser.RawLine;
+import validator.VarObj;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -28,13 +31,13 @@ public class MainParser {
 	private static final String CONDITION = "(?:" + VALID_NUMBER + "|" + BOOLEAN_CONTENT + "|" + NAME_VAR_VALDIATION + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
 	private static final String CONDITION_LINE = "(?:" + space + IF_WHILE + space + "\\((?:"+ space + CONDITION + space + "(?:\\|\\||&&))*" + space + CONDITION + space + "\\)" + space + "\\{" + space + ")"; // (?:\s*(?:if|while)\s*\((?:\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*(?:\|\||&&))*\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*\)\s*{\s*)
 	private static final String NAME_METHOD_VALDIATION = "[a-zA-Z]+[a-zA-Z0-9_]*";
-	private static final String CHECK_IF_WHILE = "(?:if/while)";
 	private static final String CHECK_CONDITION = "(?:(?:\\s)*(?:true|false|"+NAME_VAR_VALDIATION+"|" + VALID_NUMBER+"))";
-	private static final String PARAMS = "(?:" + space+ CHECK_TYPE + space + NAME_VAR_VALDIATION + space + ")"; // (?:\s*(?:int|String|char|double|boolean)\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)
-	private static final String CHECK_PARAM ="(?:[(]" + PARAMS + "*" + PARAMS + "[)]"+space+"{)"; // (?:[(](?:(?:\s*(?:int|String|char|double|boolean)\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:int|String|char|double|boolean)\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*{)
+	private static final String PARAMS = "(?:" +space+ FINAL + "?"  + space+ CHECK_TYPE + "\\s+" + NAME_VAR_VALDIATION + space + ")"; // (?:\s*(?:int|String|char|double|boolean)\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)
+	public static final String CHECK_PARAM ="(?:[(](?:" + PARAMS + ",)*" + PARAMS + "[)]"+space+"\\{\\s*)"; // (?:[(](?:(?:\s*(?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*\{\s*)
+	public static final String CHECK_FUNC_LINE = "(?:" +space + "void"  + "\\s+" + NAME_METHOD_VALDIATION + space + CHECK_PARAM + ")"; // (?:\s*(?:void|(?:int|String|char|double|boolean))\s+[a-zA-Z]+[a-zA-Z0-9_]*\s*(?:[(](?:(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*\{\s*))
 	private static final String ASSIGNMENT = "(?:" + space + NAME_VAR_VALDIATION + space + "|" + space
 										+ NAME_VAR_VALDIATION + space + "=" + space + CONTENT + space + ")"; //(?:(?:\s*_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*")\s*)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*\s*))
-	private final String CHECK_ASSIGNMENT = FINAL + "?" + "\\s+" + CHECK_TYPE + "\\s+" + "(?:(?:" + ASSIGNMENT + ",\\s*)*" + "(?:" + ASSIGNMENT + ";)";
+	private final String CHECK_ASSIGNMENT = FINAL + "?" + space + CHECK_TYPE + "\\s+" + "(?:(?:" + ASSIGNMENT + ",\\s*)*" + "(?:" + ASSIGNMENT + ";)";
 
 
 
@@ -178,14 +181,71 @@ public class MainParser {
 			while (matcher.find()){
 				int start = matcher.start();
 				int end= matcher.end();
-				rawLine.addName(splited_line.substring(start,end));
-				System.out.println(splited_line.substring(start,end));
-				return rawLine;
+				String name = splited_line.substring(start,end);
+				if ((!name.equals("true"))&&(!name.equals("false"))) {
+					rawLine.addName(name);
+					System.out.println(name);
+				}
+			}
+			return rawLine;
+
+		}
+		pattern = Pattern.compile(CHECK_FUNC_LINE);
+		matcher = pattern.matcher(line);
+		if (matcher.matches()) { //this is function deceleration
+			String name;
+			pattern = Pattern.compile(NAME_METHOD_VALDIATION);
+			matcher = pattern.matcher(line);
+			matcher.find(); //find void
+			matcher.find();// find the name of the function
+			name = line.substring(matcher.start(),matcher.end());
+			FunctionObj functionObj = new FunctionObj(name);
+			String [] params = line.split("\\(")[1].split(",");
+			for (String param: params) {
+				boolean isFinal = false;
+				String varName;
+				MainParser.varType type;
+				matcher = pattern.matcher(param);
+				matcher.find(); // find the first name
+				String first = param.substring(matcher.start(),matcher.end());
+				if (first.equals("final")){
+					isFinal = true;
+					matcher.find(); // if it's final the type is the next instancce
+					first = param.substring(matcher.start(),matcher.end());
+				}
+				type = checkType(first);
+				matcher.find(); // the name is the next match
+				varName = param.substring(matcher.start(),matcher.end());
+				functionObj.addVar(varName,type,isFinal);
+				System.out.println(varName + " " + type);
 
 			}
-		}
+			return new OpenFunction(functionObj);
 
+		}
 	return new OpenCondition(); //bullshit just for compilation
+	}
+
+	private static varType checkType(String first) {
+		varType varType = MainParser.varType.INT;
+		switch (first){
+			case "int":
+				varType =  varType.INT;
+				break;
+			case "String":
+				varType = varType.STRING;
+				break;
+			case "char":
+				varType = varType.CHAR;
+				break;
+			case "boolean":
+				varType = varType.BOOLEAN;
+				break;
+			case "double":
+				varType = varType.DOUBLE;
+				break;
+		}
+		return varType;
 	}
 
 }
