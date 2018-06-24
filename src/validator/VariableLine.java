@@ -56,6 +56,7 @@ public class VariableLine extends Singleline {
         }else if(operation.getDestname()==null){
             //this is a de
         }
+        return true;
     }
     private static boolean isCompatible(MainParser.varType arg1,MainParser.varType arg2){
         if(arg1==null||arg2==null)

@@ -1,5 +1,6 @@
-
 package validator;
+import parser.*;
+import validator.*;
 import parser.MainParser;
 
 import java.lang.reflect.Array;
@@ -17,6 +18,8 @@ public class Tester {
 		text.add("//hello");
 		text.add("hi");
 		MainParser.primaryParsing(text);
+		RawLine line = MainParser.treatOpen(" if (a || 4 || 4.1 && b");
+
 
 	}
 }
