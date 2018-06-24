@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3f455f43-b284-4e74-b60c-be45fa987379" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/parser/MainParser.java" afterPath="$PROJECT_DIR$/src/parser/MainParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/ScopeObj.java" afterPath="$PROJECT_DIR$/src/validator/ScopeObj.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/VarObj.java" afterPath="$PROJECT_DIR$/src/validator/VarObj.java" />
       <change beforePath="$PROJECT_DIR$/src/validator/VariableLine.java" afterPath="$PROJECT_DIR$/src/validator/VariableLine.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="42">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -41,8 +38,8 @@
       <file leaf-file-name="VariableLine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/validator/VariableLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="56" column="26" lean-forward="false" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+            <state relative-caret-position="147">
+              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,7 +50,7 @@
       <file leaf-file-name="ScopeObj.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="1407">
               <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
               <folding />
             </state>
@@ -63,7 +60,7 @@
       <file leaf-file-name="VarObj.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/validator/VarObj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="567">
               <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
               <folding>
                 <element signature="e#874#875#0" expanded="true" />
@@ -87,8 +84,8 @@
       <file leaf-file-name="VarDecelaration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/parser/VarDecelaration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="441">
+              <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding>
                 <element signature="e#501#502#0" expanded="true" />
                 <element signature="e#560#561#0" expanded="true" />
@@ -127,7 +124,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -146,7 +144,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,7 +173,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
@@ -299,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529788143795</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="variableline isvalid started 1">
+      <created>1529791540309</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529791540309</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -315,7 +320,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5128894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25510204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -338,13 +343,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="12pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="12pm" />
+    <MESSAGE value="variableline isvalid started 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="variableline isvalid started 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/validator/VarOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -353,28 +367,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
+    <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="1407">
+          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/VarDecelaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding>
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/validator/VarObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="567">
           <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
           <folding>
             <element signature="e#874#875#0" expanded="true" />
@@ -394,18 +397,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
+    <entry file="file://$PROJECT_DIR$/src/parser/VarDecelaration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="441">
+          <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/validator/VariableLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="56" column="26" lean-forward="false" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+        <state relative-caret-position="147">
+          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

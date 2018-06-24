@@ -52,9 +52,25 @@ public class VariableLine extends Singleline {
             if(!isCompatible(desttype,sourcetype))
                 return false;
             //now dest is already defined and source is either defined as well or it is a constant, either way they are both compatible
+            //we now need to check if it source is assigned
+            if(!source.isAssigned())
+                return false;
+
             dest.setAssigned(true);
-        }else if(operation.getDestname()==null){
-            //this is a de
+        }else {
+            //this is a definition
+            VarObj source=scopeObj.getVar(operation.getSourcename());
+            VarObj dest=scopeObj.getVar(operation.getDestname());
+
+            if(!dest.isOverridable())
+                return false;//trying no define a non overridable
+
+
+            if(source==null){
+                //constant defintion
+
+            }
+
         }
     }
     private static boolean isCompatible(MainParser.varType arg1,MainParser.varType arg2){
