@@ -3,6 +3,8 @@ package parser;
 import validator.CodeSegment;
 
 public class CloseLine implements RawLine {
+
+
     @Override
     public boolean isClosed() {
         return true;
