@@ -13,6 +13,7 @@ public class FunctionObj {
         this.name = name;
     }
 	public FunctionObj(String name) {
+    	this.parameters = new ArrayList<VarObj>();
 		this.name = name;
 	}
 
