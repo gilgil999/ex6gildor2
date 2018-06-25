@@ -25,6 +25,8 @@ public class FuncCall extends Singleline {
 
         //for every parameter, check if it is in the scope and whether it is in the
         //correct type
+        if(params.size()!=expectedParams.size())
+            throw  new TypeOneException();
         for (int i = 0; i < params.size(); i++) {
             MainParser.varType type = CodeSegment.getVarInstanceType(params.get(i), scopeObj);
             if (thisfunc.getParameters().get(i) == null) {
