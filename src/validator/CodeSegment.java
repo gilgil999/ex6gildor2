@@ -1,6 +1,7 @@
 package validator;
 
 import parser.MainParser;
+import parser.TypeOneException;
 
 import java.util.*;
 
@@ -12,7 +13,7 @@ public abstract class CodeSegment implements Checkable {
 
 
     @Override
-    public boolean isValid(ScopeObj scopeObj) {
+    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
         //maybe we can check the validity before iterating over the
         System.out.println("i dont know what to do here");
         return true;

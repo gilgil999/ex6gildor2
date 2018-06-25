@@ -1,6 +1,7 @@
 package validator;
 
 import parser.MainParser;
+import parser.TypeOneException;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class ConditionSegment extends CodeSegment {
      */
     @Override
 
-    public boolean isValid(ScopeObj scopeObj) {
+    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
 
         for(VarInstance var : condition){
             if(!checkvar(var,scopeObj))

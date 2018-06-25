@@ -44,23 +44,6 @@ public class MainParser {
 
 
 
-	/**
-	 * this function convert text file to String's array.
-	 *
-	 * @param path the absolute/relative path of the file.
-	 * @return array of strings that consist of the text lines.
-	 * @throws IOException - if the given path did not match an actual file to read
-	 */
-	public static ArrayList<String> fileToText(String path) throws IOException {
-		FileReader reader = new FileReader(path); // File not found exception if not file - Type 2 error
-		BufferedReader in = new BufferedReader(reader);
-		String line;
-		ArrayList<String> list = new ArrayList<>();
-		while ((line = in.readLine()) != null) { // if there are new lines - add them.
-			list.add(line);
-		}
-		return list;
-	}
 
 	/**
 	 * this function receive ArrayList of Strings and delete extra spaces, empty lines and comment lines
@@ -88,8 +71,8 @@ public class MainParser {
     
 
 
-    public static GlobalSegment parse(ArrayList<String> lines) {
-        RawLine[] parsedlines = Readlines(lines);
+    public static GlobalSegment parse(ArrayList<String> lines) throws TypeOneException{
+        RawLine[] parsedlines = readlines(lines);
 
 
         GlobalSegment globalSegment = new GlobalSegment();
@@ -128,7 +111,7 @@ public class MainParser {
 
     }
 
-    private static RawLine[] Readlines(ArrayList<String> parsed_text) {
+    private static RawLine[] readlines(ArrayList<String> parsed_text) {
         RawLine[] parsedlines=new RawLine[parsed_text.size()];
         for (String row:parsed_text){
             try {
