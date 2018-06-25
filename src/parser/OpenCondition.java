@@ -1,6 +1,8 @@
 package parser;
 import java.util.ArrayList;
 import validator.CodeSegment;
+import validator.ConditionSegment;
+import validator.VarInstance;
 
 public class OpenCondition implements RawLine {
 	private ArrayList<String> functionsNames = new ArrayList<String>();
@@ -21,6 +23,10 @@ public class OpenCondition implements RawLine {
     @Override
     public CodeSegment transfom() {
         //todo
-        return null;
+        ArrayList<VarInstance> vars = new ArrayList<VarInstance>();
+        for(String var : functionsNames){
+            vars.add(new VarInstance(var, MainParser.varType.UNKNOWN));
+        }
+        return new ConditionSegment(vars);
     }
 }

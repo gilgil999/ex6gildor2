@@ -29,7 +29,8 @@ public class GlobalSegment extends CodeSegment {
      */
     private void rearrangeFunctions(ScopeObj scopeObj) {
         ArrayList<FunctionSegment> myfuncs = new ArrayList<FunctionSegment>();
-        for(Checkable line : this.children){
+        for(int i=0;i<this.children.size();i++){
+            Checkable line=this.children.get(i);
             if(line instanceof FunctionSegment){
                 scopeObj.addFundtion(((FunctionSegment)line).getThisfunc());
                 myfuncs.add((FunctionSegment)line);

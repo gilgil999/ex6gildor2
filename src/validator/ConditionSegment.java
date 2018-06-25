@@ -10,6 +10,10 @@ import static parser.MainParser.isCompatible;
 public class ConditionSegment extends CodeSegment {
     private ArrayList<VarInstance> condition;
 
+    public ConditionSegment(ArrayList<VarInstance> params){
+        this.condition=params;
+    }
+
     /**
      * is valid first check if all of the variables in the condition are valid and in the scope/are constants
      * compatible with boolean

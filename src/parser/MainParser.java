@@ -229,6 +229,7 @@ public class MainParser {
 				System.out.println(varName);
 				vars.add(new VarInstance(varName,varType.UNKNOWN));
 			}
+			return new RawFuncCall(methodName,vars);
 		}
 		throw new BadLineException();
 	}

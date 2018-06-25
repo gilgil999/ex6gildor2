@@ -22,8 +22,10 @@ public class Sjavac {
         String path = args[0];
         try{
             ArrayList<String> lines = fileToText(path);
+            lines = MainParser.primaryParsing(lines);
             GlobalSegment globalSegment = MainParser.parse(lines);
             globalSegment.isValid(new ScopeObj());
+            System.out.println("0");
 
         }catch (IOException e ){
             System.out.println("2");
@@ -31,6 +33,7 @@ public class Sjavac {
         }catch (TypeOneException e){
             System.out.println("1");
         }
+
     }
 
     /**

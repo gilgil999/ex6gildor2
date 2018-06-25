@@ -23,7 +23,7 @@ public class Tester {
 		//Pattern pattern = Pattern.compile(MainParser.CHECK_ASSIGNMENT);
 		//System.out.println();
 
-		MainParser.treatSingle("final int a = b;");
+//		MainParser.treatSingle("final int a = b;");
 		System.out.println();
 //		ArrayList<String> text = new ArrayList<String>();
 //		text.add("    		hello  ");
