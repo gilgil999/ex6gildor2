@@ -96,6 +96,7 @@ public class VariableLine extends Singleline {
 
                     dest = new VarObj(operation.getDestination().getName(), operation.getDestination().getType());
                     dest.setFinal(isFinal);
+                    dest.setOverridable(false);
                     scopeObj.update(dest);
 
                 } else {

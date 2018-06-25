@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc2184dc-e4aa-40db-a160-293e8a34f594" name="Default" comment="couldwork2">
+    <list default="true" id="fc2184dc-e4aa-40db-a160-293e8a34f594" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterPath="$PROJECT_DIR$/src/oop/ex6/Sjavac.java" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/teaset1.txt" afterPath="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" afterPath="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" />
       <change beforePath="$PROJECT_DIR$/src/parser/MainParser.java" afterPath="$PROJECT_DIR$/src/parser/MainParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/CodeSegment.java" afterPath="$PROJECT_DIR$/src/validator/CodeSegment.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/ConditionSegment.java" afterPath="$PROJECT_DIR$/src/validator/ConditionSegment.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/FuncCall.java" afterPath="$PROJECT_DIR$/src/validator/FuncCall.java" />
       <change beforePath="$PROJECT_DIR$/src/validator/FunctionSegment.java" afterPath="$PROJECT_DIR$/src/validator/FunctionSegment.java" />
       <change beforePath="$PROJECT_DIR$/src/validator/GlobalSegment.java" afterPath="$PROJECT_DIR$/src/validator/GlobalSegment.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/Tester.java" afterPath="$PROJECT_DIR$/src/validator/Tester.java" />
+      <change beforePath="$PROJECT_DIR$/src/validator/ScopeObj.java" afterPath="$PROJECT_DIR$/src/validator/ScopeObj.java" />
       <change beforePath="$PROJECT_DIR$/src/validator/VariableLine.java" afterPath="$PROJECT_DIR$/src/validator/VariableLine.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,94 +19,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="MainParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="363" column="0" lean-forward="false" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+            <state relative-caret-position="232">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
-                <element signature="e#5091#5099#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FunctionSegment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding>
-                <element signature="e#187#188#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalSegment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sjavac.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/oop/ex6/Sjavac.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConditionSegment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/validator/ConditionSegment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="37" column="45" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-              <folding>
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#349#350#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScopeObj.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeSegment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/validator/CodeSegment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VarInstance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/validator/VarInstance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="e#292#293#0" expanded="true" />
-                <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#389#390#0" expanded="true" />
+                <element signature="docComment;method#primaryParsing#0;class#MainParser#0" expanded="false" />
+                <element signature="method#primaryParsing#0;class#MainParser#0" expanded="false" />
+                <element signature="class#varType#0;class#MainParser#0" expanded="false" />
+                <element signature="e#6468#6505#0" expanded="false" />
+                <element signature="e#12348#12406#0" expanded="false" />
+                <element signature="method#recognizeType#0;class#MainParser#0" expanded="false" />
+                <element signature="method#treatOpen#0;class#MainParser#0" expanded="false" />
+                <element signature="method#treatFunction#0;class#MainParser#0" expanded="false" />
+                <element signature="e#15778#15881#0" expanded="false" />
+                <element signature="method#treatCondition#0;class#MainParser#0" expanded="false" />
+                <element signature="method#checkType#0;class#MainParser#0" expanded="false" />
+                <element signature="method#isCompatible#0;class#MainParser#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -119,9 +46,34 @@
       <file leaf-file-name="user_output.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/oop/ex6/tester_files/user_output.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="122" column="33" lean-forward="false" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
+            <state relative-caret-position="252">
+              <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FunctionSegment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#188#189#0" expanded="true" />
+                <element signature="e#227#228#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenFunction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/parser/OpenFunction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+              <folding>
+                <element signature="e#726#727#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,8 +81,63 @@
       <file leaf-file-name="teaset1.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/oop/ex6/teaset1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state relative-caret-position="105">
+              <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sjavac.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/oop/ex6/Sjavac.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScopeObj.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1722">
+              <caret line="107" column="34" lean-forward="false" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
+              <folding>
+                <element signature="e#2736#2737#0" expanded="true" />
+                <element signature="e#2764#2765#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GlobalSegment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+              <folding>
+                <element signature="e#1321#1338#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CodeSegment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/validator/CodeSegment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FunctionObj.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/validator/FunctionObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -163,12 +170,14 @@
         <option value="$PROJECT_DIR$/src/oop/Tester_ex6_oop.java" />
         <option value="$PROJECT_DIR$/src/oop/ex6/Sjavac.java" />
         <option value="$PROJECT_DIR$/src/oop/ex6/Tester_ex6_oop.java" />
-        <option value="$PROJECT_DIR$/src/validator/GlobalSegment.java" />
         <option value="$PROJECT_DIR$/src/validator/FuncCall.java" />
-        <option value="$PROJECT_DIR$/src/parser/MainParser.java" />
-        <option value="$PROJECT_DIR$/src/validator/FunctionSegment.java" />
         <option value="$PROJECT_DIR$/src/validator/ConditionSegment.java" />
+        <option value="$PROJECT_DIR$/src/validator/VariableLine.java" />
+        <option value="$PROJECT_DIR$/src/parser/MainParser.java" />
+        <option value="$PROJECT_DIR$/src/validator/ScopeObj.java" />
+        <option value="$PROJECT_DIR$/src/validator/FunctionSegment.java" />
         <option value="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" />
+        <option value="$PROJECT_DIR$/src/validator/GlobalSegment.java" />
       </list>
     </option>
   </component>
@@ -192,7 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -216,27 +224,13 @@
               <item name="ex6gildor2" type="b2602c69:ProjectViewProjectNode" />
               <item name="ex6gildor2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ex6" type="462c0819:PsiDirectoryNode" />
-              <item name="tester_files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ex6gildor2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ex6gildor2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ex6" type="462c0819:PsiDirectoryNode" />
-              <item name="tester_files" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ex6gildor2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ex6gildor2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="validator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -443,16 +437,17 @@
       <option name="project" value="LOCAL" />
       <updated>1529890250323</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="working 1">
+      <created>1529893951718</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529893951718</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tester_ex6_oop - 2018.06.25 at 04h 36m 25s.xml">
-      <configuration name="Tester_ex6_oop" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 04h 39m 00s.xml">
-      <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 04h 43m 26s.xml">
       <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
     </history-entry>
@@ -477,41 +472,81 @@
     <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 05h 27m 32s.xml">
       <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 05h 46m 19s.xml">
+      <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 06h 07m 04s.xml">
+      <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29076397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29076397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25349087" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49942988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29076397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3990878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-    </layout>
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="couldwork2" />
-    <option name="LAST_COMMIT_MESSAGE" value="couldwork2" />
+    <MESSAGE value="working 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="working 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -523,24 +558,145 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/oop/ex6/Sjavac.java</url>
-          <line>25</line>
+          <url>file://$PROJECT_DIR$/src/validator/VariableLine.java</url>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/validator/FunctionSegment.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/validator/GlobalSegment.java</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/validator/GlobalSegment.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="34" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="globalSegment.children.get(0)" />
+        <watch expression="((FunctionSegment)globalSegment.children.get(0)).parent" custom="validator.FunctionSegment" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/parser/OpenFunction.java">
+    <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="483">
+          <caret line="32" column="58" lean-forward="false" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
           <folding>
-            <element signature="e#726#727#0" expanded="true" />
+            <element signature="docComment;method#primaryParsing#0;class#MainParser#0" expanded="false" />
+            <element signature="method#primaryParsing#0;class#MainParser#0" expanded="false" />
+            <element signature="class#varType#0;class#MainParser#0" expanded="false" />
+            <element signature="e#6468#6505#0" expanded="false" />
+            <element signature="e#12348#12406#0" expanded="false" />
+            <element signature="method#recognizeType#0;class#MainParser#0" expanded="false" />
+            <element signature="method#treatOpen#0;class#MainParser#0" expanded="false" />
+            <element signature="method#treatFunction#0;class#MainParser#0" expanded="false" />
+            <element signature="e#15778#15881#0" expanded="false" />
+            <element signature="method#treatCondition#0;class#MainParser#0" expanded="false" />
+            <element signature="method#checkType#0;class#MainParser#0" expanded="false" />
+            <element signature="method#isCompatible#0;class#MainParser#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/VarOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#607#608#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="37" column="53" lean-forward="true" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/VariableLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2856">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/VarObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#952#953#0" expanded="false" />
+            <element signature="e#984#985#0" expanded="false" />
+            <element signature="e#1125#1126#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/VarInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1701">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/oop/ex6/Sjavac.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/oop/ex6/tester_files/user_output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2247">
+          <caret line="107" column="48" lean-forward="true" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -549,7 +705,7 @@
         <state relative-caret-position="420">
           <caret line="29" column="40" lean-forward="false" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
           <folding>
-            <element signature="e#593#606#0" expanded="true" />
+            <element signature="e#593#606#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -558,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -566,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -574,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="68" column="16" lean-forward="false" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -582,7 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4011">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -591,45 +743,6 @@
         <state relative-caret-position="273">
           <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/VarInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/CodeSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -644,45 +757,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/oop/ex6/teaset1.txt">
+    <entry file="file://$PROJECT_DIR$/src/validator/VarObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        <state relative-caret-position="798">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#952#953#0" expanded="false" />
+            <element signature="e#984#985#0" expanded="false" />
+            <element signature="e#1125#1126#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/VarOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#607#608#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/VarInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/VariableLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2772">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/oop/ex6/tester_files/user_output.txt">
+    <entry file="file://$PROJECT_DIR$/src/parser/OpenFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="122" column="33" lean-forward="false" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="390">
+          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="e#726#727#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
+    <entry file="file://$PROJECT_DIR$/src/validator/ScopeObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="1722">
+          <caret line="107" column="34" lean-forward="false" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
+          <folding>
+            <element signature="e#2736#2737#0" expanded="true" />
+            <element signature="e#2764#2765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/FunctionObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="363" column="0" lean-forward="false" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+        <state relative-caret-position="232">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <element signature="e#5091#5099#0" expanded="true" />
+            <element signature="docComment;method#primaryParsing#0;class#MainParser#0" expanded="false" />
+            <element signature="method#primaryParsing#0;class#MainParser#0" expanded="false" />
+            <element signature="class#varType#0;class#MainParser#0" expanded="false" />
+            <element signature="e#6468#6505#0" expanded="false" />
+            <element signature="e#12348#12406#0" expanded="false" />
+            <element signature="method#recognizeType#0;class#MainParser#0" expanded="false" />
+            <element signature="method#treatOpen#0;class#MainParser#0" expanded="false" />
+            <element signature="method#treatFunction#0;class#MainParser#0" expanded="false" />
+            <element signature="e#15778#15881#0" expanded="false" />
+            <element signature="method#treatCondition#0;class#MainParser#0" expanded="false" />
+            <element signature="method#checkType#0;class#MainParser#0" expanded="false" />
+            <element signature="method#isCompatible#0;class#MainParser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/oop/ex6/teaset1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/oop/ex6/tester_files/user_output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/oop/ex6/Sjavac.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="168">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/CodeSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+          <folding>
+            <element signature="e#1321#1338#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

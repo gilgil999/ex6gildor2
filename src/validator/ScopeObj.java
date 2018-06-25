@@ -105,6 +105,10 @@ public class ScopeObj {
         }
     }
 
+    public ArrayList<FunctionObj> getFuncs() {
+        return funcs;
+    }
+
     /**
      * updates the currnet scope with the variable parameter, if there is already a variable with that name in the scope
      * then it will be overridden. otherwise it will be added to the current scope.
@@ -118,6 +122,7 @@ public class ScopeObj {
                 vars.add(parameter);
                 return;
             }
+
         }
         vars.add(parameter);
     }

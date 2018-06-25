@@ -23,11 +23,11 @@ public class MainParser {
     private static final String SINGLE_LINE = ".*(?:;\\s*)$";
     private static final String VALID_NUMBER = "(?:-?\\d+(?:.\\d+)?)";
     private static final String INT = "-?\\d+";
-    private static final String STRING = "\".+\"";
-    private static final String CHAR = "\".\"";
+    private static final String STRING = "\"\\S+\"";
+    private static final String CHAR = "\'.\'";
     private static final String DOUBLE = "-?\\d+\\.\\d+";
     private static final String NAME_VAR_VALDIATION = "(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)";
-    public static final String CONTENT = "(?:" + VALID_NUMBER + "|" + BOOLEAN_CONTENT + "|" + STRING_CONTENT + "|" + NAME_VAR_VALDIATION + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
+    public static final String CONTENT = "(?:" + VALID_NUMBER + "|" + BOOLEAN_CONTENT + "|" + CHAR + "|" + STRING_CONTENT + "|" + NAME_VAR_VALDIATION + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
     private static final String CHECK_TYPE = "(?:int|String|char|double|boolean)";
     private static final String CONDITION = "(?:" + VALID_NUMBER + "|" + BOOLEAN_CONTENT + "|" + NAME_VAR_VALDIATION + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
     private static final String CONDITION_LINE = "(?:" + space + IF_WHILE + space + "\\((?:" + space + CONDITION + space + "(?:\\|\\||&&))*" + space + CONDITION + space + "\\)" + space + "\\{" + space + ")"; // (?:\s*(?:if|while)\s*\((?:\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*(?:\|\||&&))*\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*\)\s*{\s*)
@@ -38,7 +38,7 @@ public class MainParser {
     public static final String CHECK_FUNC_LINE = "(?:" + space + "void" + "\\s+" + NAME_METHOD_VALDIATION + space + CHECK_PARAM + ")"; // (?:\s*(?:void|(?:int|String|char|double|boolean))\s+[a-zA-Z]+[a-zA-Z0-9_]*\s*(?:[(](?:(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*\{\s*))
     public static final String ASSIGNMENT = "(?:" + space + "(" + NAME_VAR_VALDIATION + ")" + space + "=" + space + "(" + CONTENT + ")" + space + ")"; //(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)
     public static final String CHECK_ASSIGNMENT = FINAL + "?" + space + CHECK_TYPE + "\\s+" + "(?:(?:(?:\\s*" + ASSIGNMENT + "\\s*|" + NAME_VAR_VALDIATION + "\\s*),)*\\s*" + "(?:\\s*" + ASSIGNMENT + "\\s*|\\s*" + NAME_VAR_VALDIATION + "\\s*);\\s*)"; // (?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:(?:(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*\s*(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*);\s*)
-    public static final String ASSIGN_WITHOUTH_DEC = "(?:,|" + CHECK_PARAM + ")" + space + "(" + NAME_VAR_VALDIATION + ")" + space + "(?:,|;)";
+    public static final String ASSIGN_WITHOUTH_DEC = "(?:,|" + CHECK_TYPE + ")" + space + "(" + NAME_VAR_VALDIATION + ")" + space + "(?:,|;)";
     private static final String RETURN = "\\s*return\\s*;\\s*";
     public static final String FUNC_CALL = space + NAME_METHOD_VALDIATION + space + "\\((?:" + space + NAME_VAR_VALDIATION + space + ",)*" + space + NAME_VAR_VALDIATION + "?" + space + "\\)" + space + ";" + space;
 

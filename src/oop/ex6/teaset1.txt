@@ -1,5 +1,8 @@
-int eger = 8;
-char mander = 'a';
-double d = 0;
-String attached = "";
-boolean sheu = true;
+void foo(int a) {
+	return;
+}
+
+void bar() {
+	foo();
+	return;
+}
