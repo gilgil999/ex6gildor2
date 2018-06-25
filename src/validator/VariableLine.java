@@ -110,7 +110,7 @@ public class VariableLine extends Singleline {
                     dest.setFinal(isFinal);
                     scopeObj.update(dest);
                 }
-                if (operation.getSource() == null) {//checking if source is nonexistent
+                if (operation.getSource().getName() == null&&operation.getSource().getType() == MainParser.varType.UNKNOWN) {//checking if source is nonexistent
                     if (isFinal) {
                         /////System.out.println("final without initializtion");
                         return false;

@@ -8,6 +8,13 @@ import java.util.ArrayList;
 import static parser.MainParser.isCompatible;
 
 public class ConditionSegment extends CodeSegment {
+    /**
+     * this class is a condition segment, a code that begins with a condition, if or while
+     * its additional member is a list of VarInstance objects that compose the condition, they all sould match  a
+     * boolean value
+     */
+
+
     private ArrayList<VarInstance> condition;
 
     public ConditionSegment(ArrayList<VarInstance> params){
@@ -24,16 +31,18 @@ public class ConditionSegment extends CodeSegment {
     @Override
 
     public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
-        if(!scopeObj.isFunction())
+
+        if(!scopeObj.isFunction())//first checks if the segment is in a function, if not it will raise error
             throw new TypeOneException();
 
 
-        for(VarInstance var : condition){
+        for(VarInstance var : condition){//then it will check if the variable matches with a boolean value
             if(!checkvar(var,scopeObj))
                 throw new TypeOneException();
         }
         ScopeObj myscope= new ScopeObj(scopeObj);
-        for (Checkable line : this.children){
+
+        for (Checkable line : this.children){//then proceed to checking the validity of the children
             if(!line.isValid(myscope))
                 throw new TypeOneException();
         }
@@ -51,7 +60,17 @@ public class ConditionSegment extends CodeSegment {
      * @return
      */
     private boolean checkvar(VarInstance var, ScopeObj scopeObj) {
-        MainParser.varType type = CodeSegment.getVarInstanceType(var, scopeObj);
+        VarObj scopevar= scopeObj.getVar(var.getName());
+        MainParser.varType type;
+        if(scopevar==null){
+            type=var.getType();
+        }else {
+            if (!scopevar.isAssigned())
+                return false;
+            type = scopevar.getType();
+        }
+//        MainParser.varType type = CodeSegment.getVarInstanceType(var, scopeObj);
+
         return isCompatible(MainParser.varType.BOOLEAN, type);
     }
 }
