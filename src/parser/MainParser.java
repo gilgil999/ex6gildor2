@@ -87,7 +87,8 @@ public class MainParser {
                 if(currentParent == null)
                     //we are already in the globalsegment
                     //todo exception
-                    System.out.println("a closing without an opening");
+                    throw new TypeOneException();
+                    ////system.out.println("a closing without an opening");
                 else
                     currentParent = currentParent.getParent();
             }else{
@@ -96,15 +97,18 @@ public class MainParser {
             }
         }
 
+        if(currentParent==null)
+            throw new TypeOneException();
         //check if a segment is left open
         if(currentParent.getParent()!=null)
+            throw new TypeOneException();
             //todo exception
-            System.out.println("an opening without a closing");
+            ////////system.out.println("an opening without a closing");
         if(globalSegment==currentParent)
             //should apply, not a neccessary check
             return globalSegment;
-        System.out.println("currentparent is not globalsegment");
-        return null;
+        ////system.out.println("currentparent is not globalsegment");
+        throw new TypeOneException();
 
     }
 
@@ -151,7 +155,7 @@ public class MainParser {
 		Matcher matcher = pattern.matcher(line);
 		if (matcher.matches()){ // this is assignment line (with deceleration)
 			ArrayList<VarOperation>  vars = new ArrayList<>();
-			System.out.println("this is declaration line");
+			////system.out.println("this is declaration line");
 			boolean isFinal = false;
 			varType type;
 			pattern = Pattern.compile(NAME_METHOD_VALDIATION);
@@ -160,7 +164,7 @@ public class MainParser {
 			if(matcher.group(0).equals("final")){
 				isFinal = true;
 				matcher.find();
-				System.out.println("the vars are final");
+				////system.out.println("the vars are final");
 			}
 			type = checkType(matcher.group(0));
 			line = line.substring(matcher.end());
@@ -178,7 +182,7 @@ public class MainParser {
                     name = matcher.group(1);
                     content = matcher.group(2);
                     variableType = recognizeType(content);
-                    System.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type " + type + ")");
+                    ////system.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type " + type + ")");
                     if (type != varType.UNKNOWN) {
                         content = null;
                     }
@@ -188,11 +192,12 @@ public class MainParser {
                 }
                 else if(matcher1.lookingAt()){
 			        matcher1.reset();
-                    System.out.println(matcher1.find());
+                    matcher1.find();
+                    ////system.out.println();
                     name = matcher1.group(1);
                     content = null;
                     variableType = varType.UNKNOWN;
-                    System.out.println("declare " + name + "(type " + type + ")");
+                    ////system.out.println("declare " + name + "(type " + type + ")");
                     VarOperation operation= new VarOperation(variableType, type,content,name);
                     vars.add(operation);
                     line = line.substring(matcher1.end());
@@ -206,7 +211,7 @@ public class MainParser {
 		matcher = pattern.matcher(line);
 		if(matcher.matches()){
 			ArrayList<VarOperation> vars = new ArrayList<>();
-			System.out.println("this is assignment line");
+			////system.out.println("this is assignment line");
 			boolean isFinal = false;
 			String name = matcher.group(1);
 			String content = matcher.group(2);
@@ -214,7 +219,7 @@ public class MainParser {
 			if (variableType != varType.UNKNOWN){
 				content = null;
 			}
-			System.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type UNKNOWN");
+			////system.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type UNKNOWN");
 			VarOperation operation= new VarOperation(variableType,varType.UNKNOWN,content,name);
 			vars.add(operation);
 			return new VarDecelaration(isFinal,vars);
@@ -222,29 +227,29 @@ public class MainParser {
 		pattern = Pattern.compile(RETURN);
 		matcher = pattern.matcher(line);
 		if (matcher.matches()){
-			System.out.println("this is return line");
+			////system.out.println("this is return line");
 			return new RawReturn();
 		}
 		pattern = Pattern.compile(FUNC_CALL);
 		matcher = pattern.matcher(line);
 		if (matcher.matches()) { // this is function call
 			ArrayList<VarInstance> vars = new ArrayList<>();
-			System.out.println("this is call to function");
+			////system.out.println("this is call to function");
 			pattern = Pattern.compile("(?:" + CONTENT + "|" +NAME_VAR_VALDIATION +")");
 			matcher = pattern.matcher(line);
 			matcher.find();
 			String methodName = matcher.group(0);
-			System.out.println("function name is " + methodName);
-			System.out.println("the vars you got: ");
+			////system.out.println("function name is " + methodName);
+			////system.out.println("the vars you got: ");
 			while (matcher.find()){
 				String varName = matcher.group(0);
 				varType type = recognizeType(varName);
 				if (type == varType.UNKNOWN){
-                    System.out.println("variable named: " + varName);
+                    ////system.out.println("variable named: " + varName);
                     vars.add(new VarInstance(varName,varType.UNKNOWN));
                     continue;
                 }
-                System.out.println("type " + type+ " variable");
+                ////system.out.println("type " + type+ " variable");
 				vars.add(new VarInstance(null,type));
 			}
 			return new RawFuncCall(methodName,vars);
@@ -297,17 +302,17 @@ public class MainParser {
 	}
 
 	private static OpenFunction treatFunction(String line) {
-		System.out.println("this is a function");
+		////system.out.println("this is a function");
 		String name;
 		Pattern pattern = Pattern.compile(NAME_METHOD_VALDIATION);
 		Matcher matcher = pattern.matcher(line);
 		matcher.find(); //find void
 		matcher.find();// find the name of the function
 		name = line.substring(matcher.start(),matcher.end());
-		System.out.println("the name of the function is: " + name);
+		////system.out.println("the name of the function is: " + name);
 		FunctionObj functionObj = new FunctionObj(name);
 		String [] params = line.split("\\(")[1].split(",");
-		System.out.println("the vars you got:");
+		////system.out.println("the vars you got:");
 		for (String param: params) {
 			boolean isFinal = false;
 			String varName;
@@ -326,27 +331,27 @@ public class MainParser {
 			matcher.find(); // the name is the next match
 			varName = param.substring(matcher.start(),matcher.end());
 			functionObj.addVar(varName,type,isFinal);
-			System.out.print("var name: "  + varName + "   var type: " + type + "   is it final? : ");
-			System.out.println(isFinal);
+//			System.out.print("var name: "  + varName + "   var type: " + type + "   is it final? : ");
+			////system.out.println(isFinal);
 
 		}
 		return new OpenFunction(functionObj);
 	}
 
 	private static OpenCondition treatCondition(String line) {
-		System.out.println("this is condition");
+		////system.out.println("this is condition");
 		OpenCondition rawLine = new OpenCondition();
 		String splited_line = line.split("\\(")[1];
 		Pattern pattern = Pattern.compile(NAME_VAR_VALDIATION);
 		Matcher matcher = pattern.matcher(splited_line);
-		System.out.println("the names you got:");
+		////system.out.println("the names you got:");
 		while (matcher.find()){
 			int start = matcher.start();
 			int end= matcher.end();
 			String name = splited_line.substring(start,end);
 			if ((!name.equals("true"))&&(!name.equals("false"))) {
 				rawLine.addName(name);
-				System.out.println(name);
+				////system.out.println(name);
 			}
 		}
 		return rawLine;
