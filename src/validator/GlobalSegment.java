@@ -20,6 +20,7 @@ public class GlobalSegment extends CodeSegment {
         rearrangeFunctions(scopeObj);
         if(hasTwoFucntionsWithTheSameName(scopeObj))
             throw new TypeOneException();
+
         //no need for deepcopying the scopeobj
         for (Checkable line : this.children){
             if(!line.isValid(scopeObj))
@@ -30,7 +31,7 @@ public class GlobalSegment extends CodeSegment {
     }
 
     /**
-     * this function returns true only if there are two function in the file
+     * this function returns true only if there are two function in the file with the same name
      * @param scopeObj
      * @return
      */

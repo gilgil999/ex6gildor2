@@ -3,17 +3,16 @@ package validator;
 import java.util.ArrayList;
 
 public class ScopeObj {
+    /**
+     * this class represents a scope, as one, it has to contain a list of variables and a list of fundtions, in addition
+     * to a boolean field stating whether the scope is inside a fucntion or not
+     */
     //may be some other datastructure
 
     private ArrayList<VarObj> vars;
     private ArrayList<FunctionObj> funcs;
     private boolean isFunction;
 
-    public ScopeObj(ArrayList<VarObj> vars, ArrayList<FunctionObj> funcs, boolean isFunction) {
-        this.vars = vars;
-        this.funcs = funcs;
-        this.isFunction = isFunction;
-    }
 
     public ScopeObj() {
         this.vars=new ArrayList<>();

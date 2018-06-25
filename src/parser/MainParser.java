@@ -26,7 +26,7 @@ public class MainParser {
 	private static final String OPEN_FINISH = ".*(?:\\{\\s*)$";
 	private static final String CLOSE = "\\s*}\\s*";
 	private static final String SINGLE_LINE = ".*(?:;\\s*)$";
-	private static final String VALID_NUMBER = "(?:" + INT + "|" + DOUBLE +")";
+	private static final String VALID_NUMBER = "(?:-?\\s?\\d+(?:\\.\\d+)?)";
 	private static final String RETURN = space + "return\\s*;" + space;
 
 	/*BASIC EXPRESSIONS*/
@@ -41,7 +41,7 @@ public class MainParser {
 	private static final String PARAMS = "(?:" +space+ FINAL + "?"  + space+ CHECK_TYPE + "\\s+" + NAME_VAR_VALDIATION + space + ")"; // (?:\s*(?:int|String|char|double|boolean)\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)
 	private static final String CHECK_PARAM ="(?:[(](?:" + PARAMS + ",)*" + PARAMS + "?\\s*[)]"+space+"\\{\\s*)"; // (?:[(](?:(?:\s*(?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*\{\s*)
 	private static final String CHECK_FUNC_LINE = "(?:" +space + "void"  + "\\s+" + NAME_METHOD_VALDIATION + space + CHECK_PARAM + ")"; // (?:\s*(?:void|(?:int|String|char|double|boolean))\s+[a-zA-Z]+[a-zA-Z0-9_]*\s*(?:[(](?:(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*\{\s*))
-	private static final String ASSIGNMENT = "(?:" + space + "(" + NAME_VAR_VALDIATION + ")" + space + "=" + space + "(" + CONTENT + ")" + space + ")"; //(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)
+	private static final String ASSIGNMENT = "(?:" + space + "(" + NAME_VAR_VALDIATION + ")" + space + "=" + space + "(" + CONTENT + "|" + NAME_VAR_VALDIATION + ")" + space + ")"; //(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)
 	private static final String CHECK_ASSIGNMENT = space +FINAL + "?" + space + CHECK_TYPE + "\\s+" + "(?:(?:(?:\\s*" + ASSIGNMENT + "\\s*|" + NAME_VAR_VALDIATION + "\\s*),\\s*)*\\s*" + "(?:\\s*" + ASSIGNMENT + "\\s*|\\s*" + NAME_VAR_VALDIATION + "\\s*);\\s*)"; // (?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:(?:(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*\s*(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*);\s*)
 	private static final String ASSIGN_WITHOUTH_DEC = space +",?(" + NAME_VAR_VALDIATION + ")" + space + "(?:,|;)";
 	private static final String FUNC_CALL = space  + NAME_METHOD_VALDIATION + space +"\\((?:" + space + NAME_VAR_VALDIATION +space+ "|" +space+ CONTENT + space + ",)*" + space + "(?:" + NAME_VAR_VALDIATION  + "|" + CONTENT + ")?" + space + "\\)" +space +";" + space;
@@ -102,12 +102,11 @@ public class MainParser {
         //check if a segment is left open
         if(currentParent.getParent()!=null)
             throw new TypeOneException();
-            //todo exception
-            System.out.println("an opening without a closing");
+
         if(globalSegment==currentParent)
             //should apply, not a neccessary check
             return globalSegment;
-        System.out.println("currentparent is not globalsegment");
+
         throw new TypeOneException();
 
     }
@@ -161,7 +160,6 @@ public class MainParser {
 		Matcher matcher = pattern.matcher(line);
 		if (matcher.matches()){ // this is assignment line (with deceleration)
 			ArrayList<VarOperation>  vars = new ArrayList<>();
-			System.out.println("this is declaration line");
 			boolean isFinal = false;
 			varType type;
 			pattern = Pattern.compile(NAME_METHOD_VALDIATION);
@@ -170,7 +168,6 @@ public class MainParser {
 			if(matcher.group(0).equals("final")){
 				isFinal = true;
 				matcher.find();
-				System.out.println("the vars are final");
 			}
 			type = checkType(matcher.group(0));
 			line = line.substring(matcher.end());
@@ -188,7 +185,6 @@ public class MainParser {
                     name = matcher.group(1);
                     content = matcher.group(2);
                     variableType = recognizeType(content);
-                    System.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type " + type + ")");
                     if (variableType != varType.UNKNOWN) {
                         content = null;
                     }
@@ -199,11 +195,9 @@ public class MainParser {
                 else if(matcher1.lookingAt()){
 			        matcher1.reset();
                     matcher1.find();
-                    System.out.println();
                     name = matcher1.group(1);
                     content = null;
                     variableType = varType.UNKNOWN;
-                    System.out.println("declare " + name + "(type " + type + ")");
                     VarOperation operation= new VarOperation(variableType, type,content,name);
                     vars.add(operation);
                     line = line.substring(matcher1.end());
@@ -217,7 +211,6 @@ public class MainParser {
 		matcher = pattern.matcher(line);
 		if(matcher.matches()){
 			ArrayList<VarOperation> vars = new ArrayList<>();
-			System.out.println("this is assignment line");
 			boolean isFinal = false;
 			String name = matcher.group(1);
 			String content = matcher.group(2);
@@ -225,7 +218,6 @@ public class MainParser {
 			if (variableType != varType.UNKNOWN){
 				content = null;
 			}
-			System.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type UNKNOWN");
 			VarOperation operation= new VarOperation(variableType,varType.UNKNOWN,content,name);
 			vars.add(operation);
 			return new VarDecelaration(isFinal,vars);
@@ -233,29 +225,24 @@ public class MainParser {
 		pattern = Pattern.compile(RETURN);
 		matcher = pattern.matcher(line);
 		if (matcher.matches()){
-			System.out.println("this is return line");
 			return new RawReturn();
 		}
 		pattern = Pattern.compile(FUNC_CALL);
 		matcher = pattern.matcher(line);
 		if (matcher.matches()) { // this is function call
 			ArrayList<VarInstance> vars = new ArrayList<>();
-			System.out.println("this is call to function");
 			pattern = Pattern.compile("(?:" + CONTENT + "|" +NAME_VAR_VALDIATION +")");
 			matcher = pattern.matcher(line);
 			matcher.find();
 			String methodName = matcher.group(0);
-			System.out.println("function name is " + methodName);
-			System.out.println("the vars you got: ");
+
 			while (matcher.find()){
 				String varName = matcher.group(0);
 				varType type = recognizeType(varName);
 				if (type == varType.UNKNOWN){
-                    System.out.println("variable named: " + varName);
                     vars.add(new VarInstance(varName,varType.UNKNOWN));
                     continue;
                 }
-                System.out.println("type " + type+ " variable");
 				vars.add(new VarInstance(null,type));
 			}
 			return new RawFuncCall(methodName,vars);
@@ -311,17 +298,14 @@ public class MainParser {
 	}
 
 	private static OpenFunction treatFunction(String line) {
-		System.out.println("this is a function");
 		String name;
 		Pattern pattern = Pattern.compile(NAME_METHOD_VALDIATION);
 		Matcher matcher = pattern.matcher(line);
 		matcher.find(); //find void
 		matcher.find();// find the name of the function
 		name = line.substring(matcher.start(),matcher.end());
-		System.out.println("the name of the function is: " + name);
 		FunctionObj functionObj = new FunctionObj(name);
 		String [] params = line.split("\\(")[1].split(",");
-		System.out.println("the vars you got:");
 		for (String param: params) {
 			boolean isFinal = false;
 			String varName;
@@ -340,27 +324,24 @@ public class MainParser {
 			matcher.find(); // the name is the next match
 			varName = param.substring(matcher.start(),matcher.end());
 			functionObj.addVar(varName,type,isFinal);
-//			System.out.print("var name: "  + varName + "   var type: " + type + "   is it final? : ");
-			System.out.println(isFinal);
+
 
 		}
 		return new OpenFunction(functionObj);
 	}
 
 	private static OpenCondition treatCondition(String line) {
-		System.out.println("this is condition");
 		OpenCondition rawLine = new OpenCondition();
 		String splited_line = line.split("\\(")[1];
 		Pattern pattern = Pattern.compile(NAME_VAR_VALDIATION);
 		Matcher matcher = pattern.matcher(splited_line);
-		System.out.println("the names you got:");
 		while (matcher.find()){
 			int start = matcher.start();
 			int end= matcher.end();
 			String name = splited_line.substring(start,end);
 			if ((!name.equals("true"))&&(!name.equals("false"))) {
 				rawLine.addName(name);
-				System.out.println(name);
+
 			}
 		}
 		return rawLine;

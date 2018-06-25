@@ -3,7 +3,9 @@ package validator;
 import parser.MainParser;
 
 public class VarObj extends VarInstance{
-
+    /**
+     * this class represents a variable in the context of a scope
+     */
     private boolean isAssigned;
     private boolean isFinal;
     private boolean overridable;

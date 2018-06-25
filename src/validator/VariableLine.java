@@ -8,7 +8,9 @@ import static parser.MainParser.isCompatible;
 
 public class VariableLine extends Singleline {
 
-
+    /**
+     * this class handles all of the cases where a variable is either declared or assisnged
+     */
     private boolean isFinal;
     private ArrayList<VarOperation> operations;
 

@@ -3,6 +3,10 @@ package validator;
 import parser.MainParser;
 
 public class VarInstance {
+    /**
+     * this class represents a variable instance, which is a representation of a variable outside the context of
+     * a specific scope. its fields are a name and a type
+     */
     protected String name;
     protected MainParser.varType type;
 
