@@ -51,16 +51,18 @@ public class GlobalSegment extends CodeSegment {
     private void rearrangeFunctions(ScopeObj scopeObj) {
         ArrayList<FunctionSegment> myfuncs = new ArrayList<FunctionSegment>();
         int len = this.children.size();
-//        for(int i=0;i<len;i++)
-        for(Checkable line : this.children){
-//            Checkable line=this.children.get(i);
+        ArrayList<Checkable> toremove=new ArrayList<>();
+        for(int i=0;i<len;i++){
+            Checkable line=this.children.get(i);
             if(line instanceof FunctionSegment){
                 //todo function can not have the same name
                 scopeObj.addFundtion(((FunctionSegment)line).getThisfunc());
                 myfuncs.add((FunctionSegment)line);
-                this.children.remove(line);
+//                this.children.remove(line);
+                toremove.add(line);
             }
         }
+        this.children.removeAll(toremove);
         this.children.addAll(myfuncs);
 
 

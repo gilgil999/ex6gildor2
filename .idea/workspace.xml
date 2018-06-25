@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc2184dc-e4aa-40db-a160-293e8a34f594" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" afterPath="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" />
-      <change beforePath="$PROJECT_DIR$/src/parser/MainParser.java" afterPath="$PROJECT_DIR$/src/parser/MainParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/FunctionSegment.java" afterPath="$PROJECT_DIR$/src/validator/FunctionSegment.java" />
       <change beforePath="$PROJECT_DIR$/src/validator/GlobalSegment.java" afterPath="$PROJECT_DIR$/src/validator/GlobalSegment.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/ScopeObj.java" afterPath="$PROJECT_DIR$/src/validator/ScopeObj.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/VariableLine.java" afterPath="$PROJECT_DIR$/src/validator/VariableLine.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +41,8 @@
       <file leaf-file-name="user_output.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/oop/ex6/tester_files/user_output.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+            <state relative-caret-position="17157">
+              <caret line="853" column="64" lean-forward="true" selection-start-line="853" selection-start-column="64" selection-end-line="853" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -114,8 +109,8 @@
       <file leaf-file-name="GlobalSegment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+            <state relative-caret-position="420">
+              <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
               <folding>
                 <element signature="e#1321#1338#0" expanded="true" />
               </folding>
@@ -252,7 +247,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Sjavac">
+  <component name="RunManager" selected="JUnit.Tester_ex6_oop (1)">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -410,8 +405,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Sjavac" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Tester_ex6_oop (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Tester_ex6_oop (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Sjavac" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.Tester_ex6_oop" />
       </list>
     </recent_temporary>
@@ -444,13 +439,17 @@
       <option name="project" value="LOCAL" />
       <updated>1529893951718</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working 2">
+      <created>1529950917452</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529950917452</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 04h 43m 26s.xml">
-      <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 04h 45m 49s.xml">
       <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
     </history-entry>
@@ -476,6 +475,9 @@
       <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
     </history-entry>
     <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 06h 07m 04s.xml">
+      <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tester_ex6_oop_(1) - 2018.06.25 at 21h 22m 44s.xml">
       <configuration name="Tester_ex6_oop (1)" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -546,7 +548,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="couldwork2" />
     <MESSAGE value="working 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="working 1" />
+    <MESSAGE value="working 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="working 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,7 +580,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/validator/GlobalSegment.java</url>
-          <line>53</line>
+          <line>54</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -861,8 +864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/oop/ex6/tester_files/user_output.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+        <state relative-caret-position="17157">
+          <caret line="853" column="64" lean-forward="true" selection-start-line="853" selection-start-column="64" selection-end-line="853" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -896,8 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+        <state relative-caret-position="420">
+          <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
           <folding>
             <element signature="e#1321#1338#0" expanded="true" />
           </folding>
