@@ -69,15 +69,9 @@ public class MainParser {
     
 
 
-<<<<<<< HEAD
-    public static GlobalSegment parse(ArrayList<String> lines) throws BadLineException  {
-        RawLine[] parsedlines = Readlines(lines);
-=======
+
     public static GlobalSegment parse(ArrayList<String> lines) throws TypeOneException{
         RawLine[] parsedlines = readlines(lines);
-
-
->>>>>>> 96f05339baecda09cc9491400042a7bc5da0f604
         GlobalSegment globalSegment = new GlobalSegment();
         int len=parsedlines.length;
         CodeSegment currentParent=globalSegment;
@@ -114,11 +108,8 @@ public class MainParser {
 
     }
 
-<<<<<<< HEAD
-    private static RawLine[] Readlines(ArrayList<String> parsed_text) throws BadLineException {
-=======
-    private static RawLine[] readlines(ArrayList<String> parsed_text) {
->>>>>>> 96f05339baecda09cc9491400042a7bc5da0f604
+
+    private static RawLine[] readlines(ArrayList<String> parsed_text) throws BadLineException {
         RawLine[] parsedlines=new RawLine[parsed_text.size()];
         int counter = 0;
         for (String row:parsed_text){
