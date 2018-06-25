@@ -1,5 +1,7 @@
 package validator;
 
+import parser.TypeOneException;
+
 public class FunctionSegment extends CodeSegment {
 
     private FunctionObj thisfunc;
@@ -20,7 +22,7 @@ public class FunctionSegment extends CodeSegment {
      * @Override
      */
 
-    public boolean isValid(ScopeObj scopeObj) {
+    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
         ScopeObj myscope= new ScopeObj(scopeObj);
         myscope.update(this.thisfunc.getParameters());
         myscope.setFunction(true);//updates the

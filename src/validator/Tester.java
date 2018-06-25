@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 public class Tester {
 	public static void main(String[] args){
-<<<<<<< HEAD
 		//ArrayList<String> text = new ArrayList<String>();
 		//text.add("    		hello  ");
 		//text.add("");
@@ -26,7 +25,6 @@ public class Tester {
 
 		MainParser.treatSingle("final int a = b;");
 		System.out.println();
-=======
 //		ArrayList<String> text = new ArrayList<String>();
 //		text.add("    		hello  ");
 //		text.add("");
@@ -60,7 +58,6 @@ public class Tester {
 		VariableLine vl=new VariableLine(true,arr);
 		System.out.println(vl.isValid(s));
 		System.out.println("gil");
->>>>>>> f9c95179a2801df1d045e0bff2c7915d2161f01e
 
 
 	}

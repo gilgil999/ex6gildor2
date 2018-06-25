@@ -1,4 +1,6 @@
 package validator;
+import parser.TypeOneException;
+
 import java.util.*;
 
 
@@ -11,7 +13,7 @@ public class GlobalSegment extends CodeSegment {
     }
 
     @Override
-    public boolean isValid(ScopeObj scopeObj) {
+    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
         rearrangeFunctions(scopeObj);
         //no need for deepcopying the scopeobj
         for (Checkable line : this.children){

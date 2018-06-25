@@ -1,6 +1,6 @@
 package parser;
 
-public class BadLineException extends Exception {
+public class BadLineException extends TypeOneException {
 	public static String ERROR_MESSAGE = "there is a line with unknown formation";
 	private String errorMessage;
 
