@@ -24,15 +24,18 @@ public class ConditionSegment extends CodeSegment {
     @Override
 
     public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
+        if(!scopeObj.isFunction())
+            throw new TypeOneException();
+
 
         for(VarInstance var : condition){
             if(!checkvar(var,scopeObj))
-                return false;
+                throw new TypeOneException();
         }
         ScopeObj myscope= new ScopeObj(scopeObj);
         for (Checkable line : this.children){
             if(!line.isValid(myscope))
-                return false;
+                throw new TypeOneException();
         }
 
         return true;

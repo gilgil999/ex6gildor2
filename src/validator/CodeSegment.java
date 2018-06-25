@@ -15,7 +15,7 @@ public abstract class CodeSegment implements Checkable {
     @Override
     public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
         //maybe we can check the validity before iterating over the
-        System.out.println("i dont know what to do here");
+        /////System.out.println("i dont know what to do here");
         return true;
     }
 
@@ -48,16 +48,16 @@ public abstract class CodeSegment implements Checkable {
 
     public static MainParser.varType getVarInstanceType(VarInstance var, ScopeObj scopeObj) {
         if (var == null) {
-            System.out.println("var is null");
+            /////System.out.println("var is null");
             return null;
         }
         MainParser.varType type;
         VarObj varObj = scopeObj.getVar(var.getName());
         if (varObj == null) {
-            System.out.println("var is not in scope");
+            /////System.out.println("var is not in scope");
             type = var.getType();
         } else {
-            System.out.println("var is in scope");
+            /////System.out.println("var is in scope");
             type = varObj.getType();
         }
         return type;

@@ -32,6 +32,7 @@ public class GlobalSegment extends CodeSegment {
         for(int i=0;i<this.children.size();i++){
             Checkable line=this.children.get(i);
             if(line instanceof FunctionSegment){
+                //todo function can not have the same name
                 scopeObj.addFundtion(((FunctionSegment)line).getThisfunc());
                 myfuncs.add((FunctionSegment)line);
                 this.children.remove(line);

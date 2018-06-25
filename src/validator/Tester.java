@@ -21,10 +21,10 @@ public class Tester {
 		//MainParser.primaryParsing(text);
 		//RawLine line = MainParser.treatOpen(" while (abc || true|| 4.1 && b){");
 		//Pattern pattern = Pattern.compile(MainParser.CHECK_ASSIGNMENT);
-		//System.out.println();
+		///////System.out.println();
 
 //		MainParser.treatSingle("final int a = b;");
-		System.out.println();
+		/////System.out.println();
 //		ArrayList<String> text = new ArrayList<String>();
 //		text.add("    		hello  ");
 //		text.add("");
@@ -56,8 +56,8 @@ public class Tester {
 		arr.add(varOperation);
 
 		VariableLine vl=new VariableLine(true,arr);
-		System.out.println(vl.isValid(s));
-		System.out.println("gil");
+		/////System.out.println(vl.isValid(s));
+		/////System.out.println("gil");
 
 
 	}

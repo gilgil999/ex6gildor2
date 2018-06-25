@@ -1,4 +1,4 @@
-package oop.ex6.main;
+package oop.ex6;
 
 import parser.MainParser;
 import parser.TypeOneException;

@@ -23,6 +23,9 @@ public class FunctionSegment extends CodeSegment {
      */
 
     public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
+        if(scopeObj.isFunction())
+            throw new TypeOneException();
+
         ScopeObj myscope= new ScopeObj(scopeObj);
         myscope.update(this.thisfunc.getParameters());
         myscope.setFunction(true);//updates the
