@@ -5,7 +5,10 @@ import java.util.*;
 
 
 public class GlobalSegment extends CodeSegment {
-
+    /**
+     * this class represents the entire sjava file, therefore is has to inherit from CodeSegment.
+     *
+     */
 
     public GlobalSegment() {
         super();
@@ -26,6 +29,11 @@ public class GlobalSegment extends CodeSegment {
         return true;
     }
 
+    /**
+     * this function returns true only if there are two function in the file
+     * @param scopeObj
+     * @return
+     */
     private boolean hasTwoFucntionsWithTheSameName(ScopeObj scopeObj) {
         ArrayList<FunctionObj> funcs = scopeObj.getFuncs();
 

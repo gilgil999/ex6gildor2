@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fc2184dc-e4aa-40db-a160-293e8a34f594" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" afterPath="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" />
       <change beforePath="$PROJECT_DIR$/src/parser/MainParser.java" afterPath="$PROJECT_DIR$/src/parser/MainParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/Checkable.java" afterPath="$PROJECT_DIR$/src/validator/Checkable.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/CodeSegment.java" afterPath="$PROJECT_DIR$/src/validator/CodeSegment.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/ConditionSegment.java" afterPath="$PROJECT_DIR$/src/validator/ConditionSegment.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/FuncCall.java" afterPath="$PROJECT_DIR$/src/validator/FuncCall.java" />
-      <change beforePath="$PROJECT_DIR$/src/validator/VariableLine.java" afterPath="$PROJECT_DIR$/src/validator/VariableLine.java" />
+      <change beforePath="$PROJECT_DIR$/src/validator/FunctionObj.java" afterPath="$PROJECT_DIR$/src/validator/FunctionObj.java" />
+      <change beforePath="$PROJECT_DIR$/src/validator/FunctionSegment.java" afterPath="$PROJECT_DIR$/src/validator/FunctionSegment.java" />
+      <change beforePath="$PROJECT_DIR$/src/validator/GlobalSegment.java" afterPath="$PROJECT_DIR$/src/validator/GlobalSegment.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,22 +18,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MainParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="92" column="48" lean-forward="true" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
+            <state relative-caret-position="168">
+              <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
               <folding>
                 <element signature="docComment;method#primaryParsing#0;class#MainParser#0" expanded="false" />
                 <element signature="method#primaryParsing#0;class#MainParser#0" expanded="false" />
                 <element signature="class#varType#0;class#MainParser#0" expanded="false" />
-                <element signature="e#6305#6342#0" expanded="false" />
-                <element signature="e#6979#6995#0" expanded="false" />
-                <element signature="e#12125#12182#0" expanded="false" />
+                <element signature="e#6279#6316#0" expanded="false" />
+                <element signature="e#6953#6969#0" expanded="false" />
+                <element signature="e#12099#12156#0" expanded="false" />
                 <element signature="method#recognizeType#0;class#MainParser#0" expanded="false" />
                 <element signature="method#treatOpen#0;class#MainParser#0" expanded="false" />
                 <element signature="method#treatFunction#0;class#MainParser#0" expanded="false" />
-                <element signature="e#15235#15330#0" expanded="false" />
+                <element signature="e#15209#15304#0" expanded="false" />
                 <element signature="method#treatCondition#0;class#MainParser#0" expanded="false" />
                 <element signature="method#checkType#0;class#MainParser#0" expanded="false" />
                 <element signature="method#isCompatible#0;class#MainParser#0" expanded="false" />
@@ -80,11 +77,13 @@
       <file leaf-file-name="FunctionSegment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="152">
+              <caret line="52" column="72" lean-forward="false" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
               <folding>
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,12 +99,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FunctionObj.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FunctionObj.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/validator/FunctionObj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="47">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding>
+                <element signature="e#1043#1044#0" expanded="true" />
+                <element signature="e#1076#1077#0" expanded="true" />
+                <element signature="e#1107#1108#0" expanded="true" />
+                <element signature="e#1134#1135#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,10 +127,10 @@
       <file leaf-file-name="GlobalSegment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="168">
+              <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
               <folding>
-                <element signature="e#1321#1338#0" expanded="true" />
+                <element signature="e#1572#1589#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,16 +187,17 @@
         <option value="$PROJECT_DIR$/src/oop/ex6/Sjavac.java" />
         <option value="$PROJECT_DIR$/src/oop/ex6/Tester_ex6_oop.java" />
         <option value="$PROJECT_DIR$/src/validator/ScopeObj.java" />
-        <option value="$PROJECT_DIR$/src/validator/FunctionSegment.java" />
-        <option value="$PROJECT_DIR$/src/validator/GlobalSegment.java" />
         <option value="$PROJECT_DIR$/src/validator/VariableLine.java" />
         <option value="$PROJECT_DIR$/src/validator/Checkable.java" />
-        <option value="$PROJECT_DIR$/src/parser/MainParser.java" />
         <option value="$PROJECT_DIR$/src/validator/CodeSegment.java" />
         <option value="$PROJECT_DIR$/src/oop/ex6/tester_files/Tests/SchoolTests/test428.sjava" />
         <option value="$PROJECT_DIR$/src/oop/ex6/teaset1.txt" />
         <option value="$PROJECT_DIR$/src/validator/ConditionSegment.java" />
         <option value="$PROJECT_DIR$/src/validator/FuncCall.java" />
+        <option value="$PROJECT_DIR$/src/validator/FunctionObj.java" />
+        <option value="$PROJECT_DIR$/src/validator/FunctionSegment.java" />
+        <option value="$PROJECT_DIR$/src/validator/GlobalSegment.java" />
+        <option value="$PROJECT_DIR$/src/parser/MainParser.java" />
       </list>
     </option>
   </component>
@@ -228,6 +233,12 @@
               <item name="ex6gildor2" type="b2602c69:ProjectViewProjectNode" />
               <item name="ex6gildor2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex6gildor2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex6gildor2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ex6gildor2" type="b2602c69:ProjectViewProjectNode" />
@@ -598,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529961560674</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="3 tests left">
+      <created>1529966665946</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1529966665946</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -678,7 +696,8 @@
     <MESSAGE value="working 1" />
     <MESSAGE value="working 2" />
     <MESSAGE value="working 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="working 3" />
+    <MESSAGE value="3 tests left" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 tests left" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -725,13 +744,13 @@
             <element signature="docComment;method#primaryParsing#0;class#MainParser#0" expanded="false" />
             <element signature="method#primaryParsing#0;class#MainParser#0" expanded="false" />
             <element signature="class#varType#0;class#MainParser#0" expanded="false" />
-            <element signature="e#6305#6342#0" expanded="false" />
-            <element signature="e#6979#6995#0" expanded="false" />
-            <element signature="e#12125#12182#0" expanded="false" />
+            <element signature="e#6279#6316#0" expanded="false" />
+            <element signature="e#6953#6969#0" expanded="false" />
+            <element signature="e#12099#12156#0" expanded="false" />
             <element signature="method#recognizeType#0;class#MainParser#0" expanded="false" />
             <element signature="method#treatOpen#0;class#MainParser#0" expanded="false" />
             <element signature="method#treatFunction#0;class#MainParser#0" expanded="false" />
-            <element signature="e#15235#15330#0" expanded="false" />
+            <element signature="e#15209#15304#0" expanded="false" />
             <element signature="method#treatCondition#0;class#MainParser#0" expanded="false" />
             <element signature="method#checkType#0;class#MainParser#0" expanded="false" />
             <element signature="method#isCompatible#0;class#MainParser#0" expanded="false" />
@@ -756,8 +775,8 @@
         <state relative-caret-position="693">
           <caret line="37" column="53" lean-forward="true" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
           <folding>
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -963,49 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#1321#1338#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="92" column="48" lean-forward="true" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
-          <folding>
-            <element signature="docComment;method#primaryParsing#0;class#MainParser#0" expanded="false" />
-            <element signature="method#primaryParsing#0;class#MainParser#0" expanded="false" />
-            <element signature="class#varType#0;class#MainParser#0" expanded="false" />
-            <element signature="e#6305#6342#0" expanded="false" />
-            <element signature="e#6979#6995#0" expanded="false" />
-            <element signature="e#12125#12182#0" expanded="false" />
-            <element signature="method#recognizeType#0;class#MainParser#0" expanded="false" />
-            <element signature="method#treatOpen#0;class#MainParser#0" expanded="false" />
-            <element signature="method#treatFunction#0;class#MainParser#0" expanded="false" />
-            <element signature="e#15235#15330#0" expanded="false" />
-            <element signature="method#treatCondition#0;class#MainParser#0" expanded="false" />
-            <element signature="method#checkType#0;class#MainParser#0" expanded="false" />
-            <element signature="method#isCompatible#0;class#MainParser#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/validator/CodeSegment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
@@ -1068,9 +1044,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/validator/FunctionObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="47">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1134#1135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/FunctionSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="52" column="72" lean-forward="false" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
+          <folding>
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validator/GlobalSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
+          <folding>
+            <element signature="e#1572#1589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/MainParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+          <folding>
+            <element signature="docComment;method#primaryParsing#0;class#MainParser#0" expanded="false" />
+            <element signature="method#primaryParsing#0;class#MainParser#0" expanded="false" />
+            <element signature="class#varType#0;class#MainParser#0" expanded="false" />
+            <element signature="e#6279#6316#0" expanded="false" />
+            <element signature="e#6953#6969#0" expanded="false" />
+            <element signature="e#12099#12156#0" expanded="false" />
+            <element signature="method#recognizeType#0;class#MainParser#0" expanded="false" />
+            <element signature="method#treatOpen#0;class#MainParser#0" expanded="false" />
+            <element signature="method#treatFunction#0;class#MainParser#0" expanded="false" />
+            <element signature="e#15209#15304#0" expanded="false" />
+            <element signature="method#treatCondition#0;class#MainParser#0" expanded="false" />
+            <element signature="method#checkType#0;class#MainParser#0" expanded="false" />
+            <element signature="method#isCompatible#0;class#MainParser#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

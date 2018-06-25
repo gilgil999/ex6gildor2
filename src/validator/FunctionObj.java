@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import parser.MainParser;
 
 public class FunctionObj {
+    /**
+     * this class is a representation of a fucntion object, as one, it has a list of parameters and a name
+     */
     private ArrayList<VarObj> parameters;
     private String name;
 

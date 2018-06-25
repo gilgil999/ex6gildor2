@@ -21,13 +21,13 @@ public class MainParser {
 	private static final String OPEN_FINISH = ".*(?:\\{\\s*)$";
 	private static final String CLOSE = "\\s*}\\s*";
 	private static final String SINGLE_LINE = ".*(?:;\\s*)$";
-	private static final String VALID_NUMBER = "(?:-?\\s?\\d+(?:.\\d+)?)";
+	private static final String VALID_NUMBER = "(?:-?\\s?\\d+(?:\\.\\d+)?)";
 	private static final String INT = "-?\\s?\\d+";
 	private static final String STRING = "\"[^,\'\"\\\\]*\"";
 	private static final String CHAR = "\'[^,\'\"\\\\]?\'";
 	private static final String DOUBLE = "-?\\s?\\d+\\.\\d+";
 	private static final String NAME_VAR_VALDIATION = "(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)";
-	public static final String CONTENT =  "(?:" + VALID_NUMBER + "|" + CHAR + "|" + BOOLEAN_CONTENT + "|" + STRING_CONTENT + "|" + NAME_VAR_VALDIATION + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
+	public static final String CONTENT =  "(?:" + VALID_NUMBER + "|" + CHAR + "|" + BOOLEAN_CONTENT + "|" + STRING_CONTENT + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
 	private static final String CHECK_TYPE ="(?:int|String|char|double|boolean)";
 	private static final String CONDITION = "(?:" + VALID_NUMBER + "|" + BOOLEAN_CONTENT + "|" + NAME_VAR_VALDIATION + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
 	private static final String CONDITION_LINE = "(?:" + space + IF_WHILE + space + "\\((?:"+ space + CONDITION + space + "(?:\\|\\||&&))*" + space + CONDITION + space + "\\)" + space + "\\{" + space + ")"; // (?:\s*(?:if|while)\s*\((?:\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*(?:\|\||&&))*\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*\)\s*{\s*)

@@ -3,7 +3,10 @@ package validator;
 import parser.TypeOneException;
 
 public class FunctionSegment extends CodeSegment {
-
+    /**
+     * this class is a representation of a function segment, as one, it inherits from CodeSegment class and holds a
+     * FunctoinObj member.
+     */
     private FunctionObj thisfunc;
 
     public FunctionSegment(FunctionObj funcobj) {
@@ -31,7 +34,7 @@ public class FunctionSegment extends CodeSegment {
             throw new TypeOneException();
         ScopeObj myscope = new ScopeObj(scopeObj);
         myscope.update(this.thisfunc.getParameters());
-        myscope.setFunction(true);//updates the
+        myscope.setFunction(true);//updates the scope to match
         for (Checkable line : this.children) {
             if (!line.isValid(myscope))
                 return false;
@@ -46,6 +49,10 @@ public class FunctionSegment extends CodeSegment {
 
     }
 
+    /**
+     * will only return true if there are duplicates of parameters names
+     * @return
+     */
     private boolean paramsHaveDuplicates() {
         int len = thisfunc.getParameters().size();
         String[] names = new String[len];
