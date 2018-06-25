@@ -1,10 +1,7 @@
 package parser;
 
-import validator.CodeSegment;
-import validator.FunctionObj;
-import validator.GlobalSegment;
+import validator.*;
 import parser.RawLine;
-import validator.VarObj;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -27,7 +24,7 @@ public class MainParser {
 	private static final String VALID_NUMBER = "(?:\\d+(?:.\\d+)?)";
 	private static final String INT = "\\d+";
 	private static final String STRING = "\".+\"";
-	private static final String CHAR = ".";
+	private static final String CHAR = "\".\"";
 	private static final String DOUBLE = "\\d+.\\d+";
 	private static final String NAME_VAR_VALDIATION = "(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)";
 	public static final String CONTENT =  "(?:" + VALID_NUMBER + "|" + BOOLEAN_CONTENT + "|" + STRING_CONTENT + "|" + NAME_VAR_VALDIATION + ")"; // (?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))
@@ -41,8 +38,9 @@ public class MainParser {
 	public static final String CHECK_FUNC_LINE = "(?:" +space + "void"  + "\\s+" + NAME_METHOD_VALDIATION + space + CHECK_PARAM + ")"; // (?:\s*(?:void|(?:int|String|char|double|boolean))\s+[a-zA-Z]+[a-zA-Z0-9_]*\s*(?:[(](?:(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*\{\s*))
 	public static final String ASSIGNMENT = "(?:" + space + "(" + NAME_VAR_VALDIATION + ")" + space + "=" + space + "(" + CONTENT + ")" + space + ")"; //(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)
 	public static final String CHECK_ASSIGNMENT = FINAL + "?" + space + CHECK_TYPE + "\\s+" + "(?:(?:(?:\\s*" + ASSIGNMENT + "\\s*|" + NAME_VAR_VALDIATION + "\\s*),)*\\s*" + "(?:\\s*" + ASSIGNMENT + "\\s*|\\s*" + NAME_VAR_VALDIATION + "\\s*);\\s*)"; // (?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:(?:(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*\s*(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*);\s*)
-
-
+	public static final String ASSIGN_WITHOUTH_DEC = "(?:,|" + CHECK_PARAM + ")" + space +"(" + NAME_VAR_VALDIATION + ")" +space + "(?:,|;)";
+	private static final String RETURN = "\\s*return\\s*;\\s*";
+	public static final String FUNC_CALL = space  + NAME_METHOD_VALDIATION + space +"\\((?:" + space + NAME_VAR_VALDIATION + space + ",)*" + space + NAME_VAR_VALDIATION + space + "\\)" +space +";" + space;
 
 	/**
 	 * this function convert text file to String's array.
@@ -88,10 +86,8 @@ public class MainParser {
     
 
 
-    public static GlobalSegment parse(ArrayList<String> lines) {
+    public static GlobalSegment parse(ArrayList<String> lines) throws BadLineException  {
         RawLine[] parsedlines = Readlines(lines);
-
-
         GlobalSegment globalSegment = new GlobalSegment();
         int len=parsedlines.length;
         CodeSegment currentParent=globalSegment;
@@ -128,16 +124,17 @@ public class MainParser {
 
     }
 
-    private static RawLine[] Readlines(ArrayList<String> parsed_text) {
+    private static RawLine[] Readlines(ArrayList<String> parsed_text) throws BadLineException {
         RawLine[] parsedlines=new RawLine[parsed_text.size()];
+        int counter = 0;
         for (String row:parsed_text){
             try {
 				RawLine line = readline(row);
-			}catch (Exception exception){//todo make exception for this
-
+				parsedlines[counter] = line;
+				counter ++;
+			}catch (BadLineException exception){//todo make exception for this
+				throw exception;
 			}
-
-
 
         }
         return parsedlines;
@@ -148,7 +145,8 @@ public class MainParser {
 		Pattern pattern = Pattern.compile(OPEN_FINISH);
 		Matcher matcher = pattern.matcher(line);
 		if (matcher.matches()){
-			RawLine rawLine = treatOpen(line);
+			return treatOpen(line);
+
 		}
 		pattern = Pattern.compile(CLOSE);
 		matcher = pattern.matcher(line);
@@ -158,48 +156,96 @@ public class MainParser {
 		pattern = Pattern.compile(SINGLE_LINE);
 		matcher = pattern.matcher(line);
 		if (matcher.matches()){
-			RawLine rawLine = treatSingle(line);
-
+			return treatSingle(line);
 		}
-		//todo if reaches here needs to throw exception of bad lines
-
-
-
-
-        return null;
+		throw new BadLineException();
     }
 
-    public static RawLine treatSingle(String line) {
+    public static RawLine treatSingle(String line)throws BadLineException {
 		Pattern pattern = Pattern.compile(CHECK_ASSIGNMENT);
 		Matcher matcher = pattern.matcher(line);
 		if (matcher.matches()){ // this is assignment line (with deceleration)
+			ArrayList<VarOperation>  vars = new ArrayList<>();
 			System.out.println("this is declaration line");
 			boolean isFinal = false;
-			varType type = varType.UNKNOWN;
+			varType type;
 			pattern = Pattern.compile("(" + NAME_METHOD_VALDIATION + ")");
 			matcher = pattern.matcher(line);
 			matcher.find();
 			if(matcher.group(0).equals("final")){
 				isFinal = true;
 				matcher.find();
+				System.out.println("the vars are final");
 			}
 			type = checkType(matcher.group(0));
 			pattern = Pattern.compile(ASSIGNMENT);
 			matcher = pattern.matcher(line);
 			String name, content;
-			varType varType;
+			varType variableType;
 			while (matcher.find()){
 				name = matcher.group(1);
 				content = matcher.group(2);
-				varType = recognizeType(content);
-				
+				variableType = recognizeType(content);
+				System.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type " + type + ")");
+				if (type != varType.UNKNOWN){
+					content = null;
+				}
+				VarOperation operation= new VarOperation(variableType, type,content,name);
+				vars.add(operation);
 			}
-
-
-
-
+			pattern = Pattern.compile(ASSIGN_WITHOUTH_DEC);
+			matcher = pattern.matcher(line);
+			while (matcher.find()){
+				name = matcher.group(1);
+				content = null;
+				variableType = varType.UNKNOWN;
+				System.out.println("declare " + name + "(type " + type + ")");
+				VarOperation operation= new VarOperation(variableType, type,content,name);
+				vars.add(operation);
+			}
+			return new VarDecelaration(isFinal,vars);
 		}
-		return new OpenCondition(); //bullshit just for compilation
+		pattern = Pattern.compile(ASSIGNMENT + space + ";" + space);
+		matcher = pattern.matcher(line);
+		if(matcher.matches()){
+			ArrayList<VarOperation> vars = new ArrayList<>();
+			System.out.println("this is assignment line");
+			boolean isFinal = false;
+			String name = matcher.group(1);
+			String content = matcher.group(2);
+			varType variableType = recognizeType(content);
+			if (variableType != varType.UNKNOWN){
+				content = null;
+			}
+			System.out.println("assign " + content + "(type " + variableType + ") to " + name + "(type UNKNOWN");
+			VarOperation operation= new VarOperation(variableType,varType.UNKNOWN,content,name);
+			vars.add(operation);
+			return new VarDecelaration(isFinal,vars);
+		}
+		pattern = Pattern.compile(RETURN);
+		matcher = pattern.matcher(line);
+		if (matcher.matches()){
+			System.out.println("this is return line");
+			return new RawReturn();
+		}
+		pattern = Pattern.compile(FUNC_CALL);
+		matcher = pattern.matcher(line);
+		if (matcher.matches()) { // this is function call
+			ArrayList<VarInstance> vars = new ArrayList<>();
+			System.out.println("this is call to function");
+			pattern = Pattern.compile(NAME_VAR_VALDIATION);
+			matcher = pattern.matcher(line);
+			matcher.find();
+			String methodName = matcher.group(0);
+			System.out.println("function name is " + methodName);
+			System.out.println("the vars you got: ");
+			while (matcher.find()){
+				String varName = matcher.group(0);
+				System.out.println(varName);
+				vars.add(new VarInstance(varName,varType.UNKNOWN));
+			}
+		}
+		throw new BadLineException();
 	}
 
 	private static varType recognizeType(String content) {
@@ -214,7 +260,7 @@ public class MainParser {
 		if (matcher.matches()){
 			type = varType.STRING;
 		}
-		pattern = Pattern.compile(CHECK_ASSIGNMENT);
+		pattern = Pattern.compile(CHAR);
 		matcher = pattern.matcher(content);
 		if (matcher.matches()){
 			type = varType.CHAR;
