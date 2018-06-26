@@ -7,6 +7,10 @@ import validator.VarInstance;
 import java.util.ArrayList;
 
 public class RawFuncCall implements RawLine {
+    /**
+     * this class is a representation of a function call line, as one, it holds the parameters passed and the functions
+     * detatils.
+     */
     private String funcname;
     private ArrayList<VarInstance> params;
 

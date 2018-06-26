@@ -3,6 +3,10 @@ package parser;
 import validator.CodeSegment;
 
 public class CloseLine implements RawLine {
+    /**
+     * this class is a representation of a line with a closing bracket
+     * @return
+     */
 
 
     @Override

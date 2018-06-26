@@ -5,10 +5,14 @@ import validator.ConditionSegment;
 import validator.VarInstance;
 
 public class OpenCondition implements RawLine {
-	private ArrayList<String> functionsNames = new ArrayList<String>();
+    /**
+     * this class is a representation of the first line in an if\while block
+     * as one, it contatins the variables appearing inside the condition
+     */
+	private ArrayList<String> varnames = new ArrayList<String>();
 
 	public void addName(String name) {
-		this.functionsNames.add(name);
+		this.varnames.add(name);
 	}
     @Override
     public boolean isClosed() {
@@ -24,7 +28,7 @@ public class OpenCondition implements RawLine {
     public CodeSegment transfom() {
         //todo
         ArrayList<VarInstance> vars = new ArrayList<VarInstance>();
-        for(String var : functionsNames){
+        for(String var : varnames){
             vars.add(new VarInstance(var, MainParser.varType.UNKNOWN));
         }
         return new ConditionSegment(vars);

@@ -5,6 +5,9 @@ import validator.*;
 import java.util.ArrayList;
 
 public class VarDecelaration implements RawLine {
+    /**
+     * this class is a rawline representation of a variable deceleration\assignment line
+     */
     private boolean isFinal;
     private ArrayList<VarOperation> operations;
 

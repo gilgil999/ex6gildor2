@@ -4,6 +4,10 @@ import validator.Checkable;
 import validator.ReturnLine;
 
 public class RawReturn implements RawLine {
+    /**
+     * this class is rawline representation of  a return line
+     * @return
+     */
     @Override
     public boolean isClosed() {
         return false;
