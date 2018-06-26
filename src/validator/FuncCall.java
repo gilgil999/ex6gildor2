@@ -15,13 +15,15 @@ public class FuncCall extends Singleline {
 
 
     @Override
-    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
+    public void isValid(ScopeObj scopeObj) throws TypeOneException {
         if (!scopeObj.isFunction())//function calls can only take place inside functions
             throw new TypeOneException();
         //checking if the function exists in the scope
         FunctionObj thisfunc = scopeObj.getFunction(funcname);
         if (thisfunc == null) {
-            return false;
+//            return false;
+            throw new TypeOneException();
+
         }
 
         ArrayList<VarObj> expectedParams = thisfunc.getParameters();
@@ -37,20 +39,27 @@ public class FuncCall extends Singleline {
                 type = params.get(i).getType();
             } else {
                 if (scopevar.isAssigned() == false)
-                    return false;
+//                    return false;
+                    throw new TypeOneException();
+
 
                 type = scopevar.getType();
             }
             if (expectedParams.get(i) == null) {
-                return false;
+//                return false;
+                throw new TypeOneException();
+
             }
+
             if (!MainParser.isCompatible(expectedParams.get(i).getType(), type)) {
-                return false;
+//                return false;
+                throw new TypeOneException();
+
             }
 
 
         }
-        return true;
+//        return true;
     }
 
     public FuncCall(String funcname, ArrayList<VarInstance> params) {

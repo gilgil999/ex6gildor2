@@ -4,7 +4,7 @@ import parser.MainParser;
 
 public class VarOperation {
     /**
-     * this fucntion represents an assignment or a decelaration of two variables, where destination is the variable \
+     * this class represents an assignment or a decelaration of two variables, where destination is the variable \
      * being assigned and source contains the value
      */
     private VarInstance source;

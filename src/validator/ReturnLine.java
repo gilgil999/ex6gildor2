@@ -1,5 +1,7 @@
 package validator;
 
+import parser.TypeOneException;
+
 public class ReturnLine extends Singleline {
     /**
      * this class represents a return line;
@@ -8,7 +10,9 @@ public class ReturnLine extends Singleline {
      * @return
      */
     @Override
-    public boolean isValid(ScopeObj scopeObj) {
-        return scopeObj.isFunction();
+    public void isValid(ScopeObj scopeObj) throws TypeOneException {
+        if(!scopeObj.isFunction())
+//        return scopeObj.isFunction();
+            throw new TypeOneException();
     }
 }

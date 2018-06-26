@@ -30,7 +30,7 @@ public class ConditionSegment extends CodeSegment {
      */
     @Override
 
-    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
+    public void isValid(ScopeObj scopeObj) throws TypeOneException {
 
         if(!scopeObj.isFunction())//first checks if the segment is in a function, if not it will raise error
             throw new TypeOneException();
@@ -43,11 +43,12 @@ public class ConditionSegment extends CodeSegment {
         ScopeObj myscope= new ScopeObj(scopeObj);
 
         for (Checkable line : this.children){//then proceed to checking the validity of the children
-            if(!line.isValid(myscope))
-                throw new TypeOneException();
+//            if(!line.isValid(myscope))
+//                throw new TypeOneException();
+            line.isValid(myscope);
         }
 
-        return true;
+//        return true;
 
     }
 

@@ -1,6 +1,7 @@
 package validator;
 
 import parser.MainParser;
+import parser.TypeOneException;
 
 import java.util.ArrayList;
 
@@ -20,14 +21,14 @@ public class VariableLine extends Singleline {
     }
 
     @Override
-    public boolean isValid(ScopeObj scopeObj) {
+    public void isValid(ScopeObj scopeObj) throws TypeOneException {
 
 
         for (VarOperation operation : operations) {
             if (operation.getDestination().getName() == null) {
                 /////System.out.println("no name to dest");
-                return false;//the variable does not have a name specified
-
+//                return false;//the variable does not have a name specified
+                throw new TypeOneException();
             }
 
             //check if the destination variable is in scope or are being defined
@@ -39,19 +40,26 @@ public class VariableLine extends Singleline {
                 if (operation.getSource().getName() == null && operation.getSource().getType() == MainParser.varType.UNKNOWN) {
                     //a legal statement should either have a source name or a source destination
                     /////System.out.println("source not have type and name");
-                    return false;
+//                    return false;
+                    throw new TypeOneException();
+
                 }
+
                 //dest needs to be in scope
                 if (dest == null)
                 //it is either not in scope or doesnt have a name
                 {
                     /////System.out.println("dest is not in scope or doesnt have a name");
-                    return false;
+//                    return false;
+                    throw new TypeOneException();
+
                 }
                 //we now need to check if dest is final, if so it cant be assigned
                 if (dest.isFinal()) {
                     /////System.out.println("dest is final");
-                    return false;
+//                    return false;
+                    throw new TypeOneException();
+
                 }
                 //we now need to check if the type of source is comptible with the type of dest
                 //source can be either a variable in the scope or an immidiate with a specified type
@@ -63,17 +71,23 @@ public class VariableLine extends Singleline {
                     source = scopeObj.getVar(operation.getSource().getName());
                     if (source == null) {
                         /////System.out.println("source not in scope");
-                        return false;
+//                        return false;
+                        throw new TypeOneException();
+
                     }
                     //checking if the source variable is assigned
                     if (!source.isAssigned()) {
                         /////System.out.println("source is not assigned");
-                        return false;
+//                        return false;
+                        throw new TypeOneException();
+
                     }
                     //checking compatibility
                     if (!isCompatible(dest.getType(), source.getType())) {
                         /////System.out.println("typs are not compatible1");
-                        return false;
+//                        return false;
+                        throw new TypeOneException();
+
                     }
                     //they are compatible, updating VarObj status to match as assigned variable
                     dest.setAssigned(true);
@@ -81,7 +95,9 @@ public class VariableLine extends Singleline {
                     //the type of source is defined, meaning that it is a constant
                     if (!isCompatible(dest.getType(), operation.getSource().getType())) {
                         /////System.out.println("typs are not compatible2");
-                        return false;
+//                        return false;
+                        throw new TypeOneException();
+
 
                     }
                 }
@@ -105,7 +121,9 @@ public class VariableLine extends Singleline {
                     //is is in the scope, we need to check if it is overridable
                     if (!dest.isOverridable()) {
                         /////System.out.println("trying to override an unoverridable");
-                        return false;
+//                        return false;
+                        throw new TypeOneException();
+
                     }
                     //it is overridable, we now need to check if source is defined and we can
                     dest = new VarObj(operation.getDestination().getName(), operation.getDestination().getType());
@@ -115,7 +133,9 @@ public class VariableLine extends Singleline {
                 if (operation.getSource().getName() == null&&operation.getSource().getType() == MainParser.varType.UNKNOWN) {//checking if source is nonexistent
                     if (isFinal) {
                         /////System.out.println("final without initializtion");
-                        return false;
+//                        return false;
+                        throw new TypeOneException();
+
                     } else {
                         /////System.out.println("no initialization, not final");
                         continue;
@@ -136,17 +156,23 @@ public class VariableLine extends Singleline {
                     //check if it is in the scope
                     if (source == null) {
                         /////System.out.println("source is null");
-                        return false;
+//                        return false;
+                        throw new TypeOneException();
+
                     }
                     //checking if the source variable is assigned
                     if (!source.isAssigned()) {
                         /////System.out.println("source is not assigned");
-                        return false;
+                        throw new TypeOneException();
+
+//                        return false;
                     }
                     //checking compatibility
                     if (!isCompatible(dest.getType(), source.getType())) {
                         /////System.out.println("types are not compatible3");
-                        return false;
+                        throw new TypeOneException();
+
+//                        return false;
                     }
                     //they are compatible, updating VarObj status to match as assigned variable
                     dest.setAssigned(true);
@@ -154,7 +180,9 @@ public class VariableLine extends Singleline {
                     //the type of source is defined, meaning that it is a constant
                     if (!isCompatible(dest.getType(), operation.getSource().getType())) {
                         /////System.out.println("types are not compatible4");
-                        return false;
+                        throw new TypeOneException();
+
+//                        return false;
                     }
                 }
                 dest.setAssigned(true);
@@ -163,7 +191,7 @@ public class VariableLine extends Singleline {
 
 
         }
-        return true;
+//        return true;
     }
 
 

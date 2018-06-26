@@ -11,6 +11,6 @@ public interface Checkable {
      * @return
      * @throws TypeOneException
      */
-    boolean isValid(ScopeObj scopeObj) throws TypeOneException;
+    void isValid(ScopeObj scopeObj) throws TypeOneException;
 
 }

@@ -4,14 +4,14 @@ import validator.*;
 
 import java.util.ArrayList;
 
-public class VarDecelaration implements RawLine {
+public class VarDeceleration implements RawLine {
     /**
      * this class is a rawline representation of a variable deceleration\assignment line
      */
     private boolean isFinal;
     private ArrayList<VarOperation> operations;
 
-    public VarDecelaration(boolean isFinal, ArrayList<VarOperation> operations) {
+    public VarDeceleration(boolean isFinal, ArrayList<VarOperation> operations) {
         this.isFinal = isFinal;
         this.operations = operations;
     }

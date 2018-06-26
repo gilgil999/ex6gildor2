@@ -16,18 +16,19 @@ public class GlobalSegment extends CodeSegment {
     }
 
     @Override
-    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
+    public void isValid(ScopeObj scopeObj) throws TypeOneException {
         rearrangeFunctions(scopeObj);
         if(hasTwoFucntionsWithTheSameName(scopeObj))
             throw new TypeOneException();
 
         //no need for deepcopying the scopeobj
         for (Checkable line : this.children){
-            if(!line.isValid(scopeObj))
-                throw new TypeOneException();
+//            if(!line.isValid(scopeObj))
+//                throw new TypeOneException();
+            line.isValid(scopeObj);
 
         }
-        return true;
+//        return true;
     }
 
     /**

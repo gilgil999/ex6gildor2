@@ -26,7 +26,7 @@ public class FunctionSegment extends CodeSegment {
      * @Override
      */
 
-    public boolean isValid(ScopeObj scopeObj) throws TypeOneException {
+    public void isValid(ScopeObj scopeObj) throws TypeOneException {
         if (scopeObj.isFunction())
             throw new TypeOneException();
 
@@ -36,16 +36,17 @@ public class FunctionSegment extends CodeSegment {
         myscope.update(this.thisfunc.getParameters());
         myscope.setFunction(true);//updates the scope to match
         for (Checkable line : this.children) {
-            if (!line.isValid(myscope))
-                return false;
+            line.isValid(myscope);
+//            if (!line.isValid(myscope))
+//                return false;
         }
 
         //check if there is a return statement
         if (!(this.children.get(this.children.size() - 1) instanceof ReturnLine)) {
-            return false;
+            throw new TypeOneException();
         }
 
-        return true;
+//        return true;
 
     }
 

@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Sjavac {
+    /**
+     * this is the main class of the project
+     * @param args
+     */
     public static void main(String[] args) {
 
         if (args.length != 1) {
