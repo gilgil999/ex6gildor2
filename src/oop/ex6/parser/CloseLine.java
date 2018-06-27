@@ -5,7 +5,7 @@ import oop.ex6.validator.CodeSegment;
 public class CloseLine implements RawLine {
     /**
      * this class is a representation of a line with a closing bracket
-     * @return
+     *
      */
 
 
@@ -21,7 +21,6 @@ public class CloseLine implements RawLine {
 
     @Override
     public CodeSegment transfom() {
-        //todo
         return null;
     }
 }

@@ -1,7 +1,7 @@
-package oop.ex6;
+package oop.ex6.main;
 
 import oop.ex6.parser.MainParser;
-import oop.ex6.parser.TypeOneException;
+import oop.ex6.validator.TypeOneException;
 import oop.ex6.validator.GlobalSegment;
 import oop.ex6.validator.ScopeObj;
 
@@ -34,6 +34,7 @@ public class Sjavac {
             System.out.println("2");
             System.err.println("Failed to read file, wrong path");
         }catch (TypeOneException e){
+            System.err.println(e.getMessage());
             System.out.println("1");
         }
 

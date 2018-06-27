@@ -113,11 +113,11 @@ public class MainParser {
                 currentParent = newparent;
             } else if (parsedlines[i].isClosed()) {
                 //a codesegment end and we now we go back to adding stuff to its parent
-                if (currentParent == null)
+                if (currentParent == null) {
                     //we are already in the globalsegment
-                    throw new TypeOneException();
-                    ////System.out.println("a closing without an opening");
-                else
+
+                    throw new SyntaxException("redundant closing parenthesis");
+                } else
                     currentParent = currentParent.getParent();
             } else {
                 //adding a singleline to the current codesegment
@@ -125,17 +125,18 @@ public class MainParser {
             }
         }
 
-        if (currentParent == null)
-            throw new TypeOneException();
+        if (currentParent == null) {
+            throw new SyntaxException("redundant closing parenthesis");
+        }
         //check if a segment is left open
         if (currentParent.getParent() != null)
-            throw new TypeOneException();
+            throw new SyntaxException("segment is left open");
 
         if (globalSegment == currentParent)
             //should apply, not a neccessary check
             return globalSegment;
 
-        throw new TypeOneException();
+        throw new SyntaxException("unidentified error");
 
     }
 
@@ -150,13 +151,10 @@ public class MainParser {
         RawLine[] parsedlines = new RawLine[parsed_text.size()];
         int counter = 0;
         for (String row : parsed_text) {
-            try {
-                RawLine line = readline(row);
-                parsedlines[counter] = line;
-                counter++;
-            } catch (BadLineException exception) {//todo make exception for this
-                throw exception;
-            }
+
+            RawLine line = readline(row);
+            parsedlines[counter] = line;
+            counter++;
 
         }
         return parsedlines;

@@ -1,7 +1,5 @@
 package oop.ex6.validator;
 
-import oop.ex6.parser.TypeOneException;
-
 public class FunctionSegment extends CodeSegment {
     /**
      * this class is a representation of a function segment, as one, it inherits from CodeSegment class and holds a
@@ -28,25 +26,21 @@ public class FunctionSegment extends CodeSegment {
 
     public void isValid(ScopeObj scopeObj) throws TypeOneException {
         if (scopeObj.isFunction())
-            throw new TypeOneException();
+            throw new SyntaxException("cannot call a function not inside a function");
 
         if (paramsHaveDuplicates())
-            throw new TypeOneException();
+            throw new SyntaxException("have duplicate parameters");
         ScopeObj myscope = new ScopeObj(scopeObj);
         myscope.update(this.thisfunc.getParameters());
         myscope.setFunction(true);//updates the scope to match
         for (Checkable line : this.children) {
             line.isValid(myscope);
-//            if (!line.isValid(myscope))
-//                return false;
         }
-
         //check if there is a return statement
         if (!(this.children.get(this.children.size() - 1) instanceof ReturnLine)) {
-            throw new TypeOneException();
+            throw new SyntaxException("not return line at the end of a function");
         }
 
-//        return true;
 
     }
 

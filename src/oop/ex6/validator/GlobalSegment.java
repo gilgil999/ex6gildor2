@@ -1,5 +1,4 @@
 package oop.ex6.validator;
-import oop.ex6.parser.TypeOneException;
 
 import java.util.*;
 
@@ -19,16 +18,12 @@ public class GlobalSegment extends CodeSegment {
     public void isValid(ScopeObj scopeObj) throws TypeOneException {
         rearrangeFunctions(scopeObj);
         if(hasTwoFucntionsWithTheSameName(scopeObj))
-            throw new TypeOneException();
+            throw new SyntaxException("there are two function with the same name");
 
         //no need for deepcopying the scopeobj
         for (Checkable line : this.children){
-//            if(!line.isValid(scopeObj))
-//                throw new TypeOneException();
             line.isValid(scopeObj);
-
         }
-//        return true;
     }
 
     /**
@@ -65,10 +60,8 @@ public class GlobalSegment extends CodeSegment {
         for(int i=0;i<len;i++){
             Checkable line=this.children.get(i);
             if(line instanceof FunctionSegment){
-                //todo function can not have the same name
                 scopeObj.addFundtion(((FunctionSegment)line).getThisfunc());
                 myfuncs.add((FunctionSegment)line);
-//                this.children.remove(line);
                 toremove.add(line);
             }
         }

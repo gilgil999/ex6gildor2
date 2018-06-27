@@ -1,7 +1,6 @@
 package oop.ex6.validator;
 
 import oop.ex6.parser.MainParser;
-import oop.ex6.parser.TypeOneException;
 
 import java.util.ArrayList;
 
@@ -21,14 +20,13 @@ public class VariableLine extends Singleline {
     }
 
     @Override
-    public void isValid(ScopeObj scopeObj) throws TypeOneException {
+    public void isValid(ScopeObj scopeObj) throws SyntaxException {
 
 
         for (VarOperation operation : operations) {
             if (operation.getDestination().getName() == null) {
-                /////System.out.println("no name to dest");
-//                return false;//the variable does not have a name specified
-                throw new TypeOneException();
+                // the variable does not have a name specified
+                throw new SyntaxException("the variable does not have a name specified");
             }
 
             //check if the destination variable is in scope or are being defined
@@ -39,9 +37,7 @@ public class VariableLine extends Singleline {
                 //type is not specified, meaning that it is an assigment without deceleration
                 if (operation.getSource().getName() == null && operation.getSource().getType() == MainParser.varType.UNKNOWN) {
                     //a legal statement should either have a source name or a source destination
-                    /////System.out.println("source not have type and name");
-//                    return false;
-                    throw new TypeOneException();
+                    throw new SyntaxException("a legal statement should either have a source name or a source destination");
 
                 }
 
@@ -49,16 +45,12 @@ public class VariableLine extends Singleline {
                 if (dest == null)
                 //it is either not in scope or doesnt have a name
                 {
-                    /////System.out.println("dest is not in scope or doesnt have a name");
-//                    return false;
-                    throw new TypeOneException();
+                    throw new SyntaxException("dest is not in scope or doesnt have a name");
 
                 }
                 //we now need to check if dest is final, if so it cant be assigned
                 if (dest.isFinal()) {
-                    /////System.out.println("dest is final");
-//                    return false;
-                    throw new TypeOneException();
+                    throw new SyntaxException("cannot assign to a final");
 
                 }
                 //we now need to check if the type of source is comptible with the type of dest
@@ -70,23 +62,17 @@ public class VariableLine extends Singleline {
                     //it is a variable, it has to be in the scope
                     source = scopeObj.getVar(operation.getSource().getName());
                     if (source == null) {
-                        /////System.out.println("source not in scope");
-//                        return false;
-                        throw new TypeOneException();
+                        throw new SyntaxException("variable not in scope");
 
                     }
                     //checking if the source variable is assigned
                     if (!source.isAssigned()) {
-                        /////System.out.println("source is not assigned");
-//                        return false;
-                        throw new TypeOneException();
+                        throw new SyntaxException("source variable in not assigned");
 
                     }
                     //checking compatibility
                     if (!isCompatible(dest.getType(), source.getType())) {
-                        /////System.out.println("typs are not compatible1");
-//                        return false;
-                        throw new TypeOneException();
+                        throw new SyntaxException("typs are not compatible");
 
                     }
                     //they are compatible, updating VarObj status to match as assigned variable
@@ -94,11 +80,7 @@ public class VariableLine extends Singleline {
                 } else {
                     //the type of source is defined, meaning that it is a constant
                     if (!isCompatible(dest.getType(), operation.getSource().getType())) {
-                        /////System.out.println("typs are not compatible2");
-//                        return false;
-                        throw new TypeOneException();
-
-
+                        throw new SyntaxException("typs are not compatible");
                     }
                 }
                 dest.setAssigned(true);
@@ -120,9 +102,7 @@ public class VariableLine extends Singleline {
                 } else {
                     //is is in the scope, we need to check if it is overridable
                     if (!dest.isOverridable()) {
-                        /////System.out.println("trying to override an unoverridable");
-//                        return false;
-                        throw new TypeOneException();
+                        throw new SyntaxException("trying to override an initialized variable");
 
                     }
                     //it is overridable, we now need to check if source is defined and we can
@@ -130,14 +110,11 @@ public class VariableLine extends Singleline {
                     dest.setFinal(isFinal);
                     scopeObj.update(dest);
                 }
-                if (operation.getSource().getName() == null&&operation.getSource().getType() == MainParser.varType.UNKNOWN) {//checking if source is nonexistent
+                if (operation.getSource().getName() == null && operation.getSource().getType() == MainParser.varType.UNKNOWN) {//checking if source is nonexistent
                     if (isFinal) {
-                        /////System.out.println("final without initializtion");
-//                        return false;
-                        throw new TypeOneException();
+                        throw new SyntaxException("final without initializtion");
 
                     } else {
-                        /////System.out.println("no initialization, not final");
                         continue;
                     }
                 }
@@ -155,45 +132,28 @@ public class VariableLine extends Singleline {
 
                     //check if it is in the scope
                     if (source == null) {
-                        /////System.out.println("source is null");
-//                        return false;
-                        throw new TypeOneException();
+                        throw new SyntaxException("no source is defined");
 
                     }
                     //checking if the source variable is assigned
                     if (!source.isAssigned()) {
-                        /////System.out.println("source is not assigned");
-                        throw new TypeOneException();
+                        throw new SyntaxException("source is not assigned");
 
-//                        return false;
                     }
                     //checking compatibility
                     if (!isCompatible(dest.getType(), source.getType())) {
-                        /////System.out.println("types are not compatible3");
-                        throw new TypeOneException();
-
-//                        return false;
+                        throw new SyntaxException("types are not compatible3");
                     }
                     //they are compatible, updating VarObj status to match as assigned variable
                     dest.setAssigned(true);
                 } else {
                     //the type of source is defined, meaning that it is a constant
                     if (!isCompatible(dest.getType(), operation.getSource().getType())) {
-                        /////System.out.println("types are not compatible4");
-                        throw new TypeOneException();
-
-//                        return false;
+                        throw new SyntaxException("types are not compatible");
                     }
                 }
                 dest.setAssigned(true);
-
             }
-
-
         }
-//        return true;
     }
-
-
-
 }

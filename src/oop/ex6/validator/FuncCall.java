@@ -1,7 +1,6 @@
 package oop.ex6.validator;
 
 import oop.ex6.parser.MainParser;
-import oop.ex6.parser.TypeOneException;
 
 import java.util.ArrayList;
 
@@ -17,13 +16,11 @@ public class FuncCall extends Singleline {
     @Override
     public void isValid(ScopeObj scopeObj) throws TypeOneException {
         if (!scopeObj.isFunction())//function calls can only take place inside functions
-            throw new TypeOneException();
+            throw new SyntaxException("function calls can only take place inside functions");
         //checking if the function exists in the scope
         FunctionObj thisfunc = scopeObj.getFunction(funcname);
         if (thisfunc == null) {
-//            return false;
-            throw new TypeOneException();
-
+            throw new SyntaxException("bad fucntion call");
         }
 
         ArrayList<VarObj> expectedParams = thisfunc.getParameters();
@@ -31,7 +28,7 @@ public class FuncCall extends Singleline {
         //for every parameter, check if it is in the scope and whether it is in the
         //correct type
         if (params.size() != expectedParams.size())
-            throw new TypeOneException();
+            throw new SyntaxException("number of parameters must match");
         for (int i = 0; i < params.size(); i++) {
             MainParser.varType type;
             VarObj scopevar = scopeObj.getVar(params.get(i).getName());
@@ -39,21 +36,18 @@ public class FuncCall extends Singleline {
                 type = params.get(i).getType();
             } else {
                 if (scopevar.isAssigned() == false)
-//                    return false;
-                    throw new TypeOneException();
+                    throw new SyntaxException("variables not assigned");
 
 
                 type = scopevar.getType();
             }
             if (expectedParams.get(i) == null) {
-//                return false;
-                throw new TypeOneException();
+                throw new SyntaxException("not enough parameters");
 
             }
 
             if (!MainParser.isCompatible(expectedParams.get(i).getType(), type)) {
-//                return false;
-                throw new TypeOneException();
+                throw new SyntaxException("variables are not compatible");
 
             }
 

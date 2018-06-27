@@ -1,7 +1,6 @@
 package oop.ex6.validator;
 
 import oop.ex6.parser.MainParser;
-import oop.ex6.parser.TypeOneException;
 
 import java.util.ArrayList;
 
@@ -33,23 +32,18 @@ public class ConditionSegment extends CodeSegment {
     public void isValid(ScopeObj scopeObj) throws TypeOneException {
 
         if(!scopeObj.isFunction())//first checks if the segment is in a function, if not it will raise error
-            throw new TypeOneException();
+            throw new SyntaxException("the condition segment is not inside a function");
 
 
         for(VarInstance var : condition){//then it will check if the variable matches with a boolean value
             if(!checkvar(var,scopeObj))
-                throw new TypeOneException();
+                throw new SyntaxException("variable is not defined or is not compatible with boolean");
         }
         ScopeObj myscope= new ScopeObj(scopeObj);
 
         for (Checkable line : this.children){//then proceed to checking the validity of the children
-//            if(!line.isValid(myscope))
-//                throw new TypeOneException();
             line.isValid(myscope);
         }
-
-//        return true;
-
     }
 
     /**

@@ -26,7 +26,6 @@ public class OpenCondition implements RawLine {
 
     @Override
     public CodeSegment transfom() {
-        //todo
         ArrayList<VarInstance> vars = new ArrayList<VarInstance>();
         for(String var : varnames){
             vars.add(new VarInstance(var, MainParser.varType.UNKNOWN));

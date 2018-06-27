@@ -1,7 +1,5 @@
 package oop.ex6.validator;
 
-import oop.ex6.parser.TypeOneException;
-
 public interface Checkable {
     /**
      * this interface is the interface of all of the objects in our project that can be checked to see if they are

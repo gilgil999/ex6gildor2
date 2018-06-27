@@ -1,4 +1,5 @@
-package oop.ex6.parser;
+package oop.ex6.validator;
+
 
 public class SyntaxException extends TypeOneException {
     public SyntaxException(String message) {
