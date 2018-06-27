@@ -46,7 +46,7 @@ implementation detatils
 questions
 =====================================================
 
---- 6.1  -  error handling ---
+====== 6.1  -  error handling ======
 in our project we choose to check the validity of the file using exceptions. our validity check method is IsValid().
 it is a void function and it throws TypeOneException, this exception, when caught, informs the program that there was
 an invalidity.
@@ -55,13 +55,62 @@ throw exceptions that inherit from TypeOneException.
 we choose not implement a TypeTwoException because the neccessary input validity checks are done in a confined area in
 the code and dont require complex handling.
 
---- 6.2  -  design choices ---
+
+====== 6.2  -  design choices ======
+
+
+--- parts of the program ---
+
 the different parts of our program are:
 
 - reading the lines and understanding their meaning (MainParser.readlines method)
     - each line is read independently
 - going over the lines and validating that they follow the required logic and rules (the Checkable interface)
     - each line sould be validated using a smaller set of considerations then the whole program (ScopeObj)
+
+we chose to implement a class for every type of legal line in the code, all of these lines inhrit from the Rawline
+interface. this way it will be easy to expand the software to new kinds of lines, simply by adding another class that
+implements Rawline of its subcalsses.
+the String input is converted to rawline input using regex and a parsing mechanism implemented in the MainParser static
+class.
+the Rawline interface ensures that each line can be converted to a Checkable object. this conversion happens in the
+MainParser class in the parse() method. we can ass new kinds of lines by introducing their matching classes that
+implement Checkable.
+each Checkable class has an isvalid(ScopeObj) that checks the validity of this line in the context of a specific Scope.
+this method can be implemented seperatly for every type of line, whether it is a block of code (CodeSegment) or a
+single line of code (Singleline).
+
+we defined a few data structures that proved to be useful in our work:
+    -VarInstance, a representation of a variable appearance outside the context of scopes and assignments
+    -VarObj, a representation of a variable appearance inside the  context of scopes and assignments
+    -FunctionObj, a representation of a function outside the context of scopes, calls and assignments
+    -VarOperation, an assignment or deceleration of two variables,  outside the context of scopes and assignments, contains
+            VarInstance objects.
+
+--- questions ---
+****adding new variables fo handle will take the following actions:
+
+    0.adding a new type to the type enum
+
+    1.modifying the regex
+    there will be need to update the regex queries. the regex is built in a modular fashion such that adding a new type is
+    covered by adding the characteristics of a that type and its deceleration (e.g. "float") keyword in a specific part of the code, the
+    modification will be incorperated automatically.
+
+    2.parsing using the regex
+    in adding a new type we will have to change the parsing method (redline) to create a new VarInstance object when it gets
+    the information from the regex part of the program.
+
+    3.modifying the isCompatible
+    MainParser.isCompatible method that handles the compatibility of variables assignment to one another
+
+****Inheritage of files
+we can simply add this feature by initializing the ScopeObj in the global segment with the scopeObj of the inherited
+files.
+we can create a method that will process the files and extract the matching FunctionObj from them. then they will be
+passed to the scopeobj of the current file.
+
+
 
 
 
