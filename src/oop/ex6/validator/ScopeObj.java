@@ -1,4 +1,4 @@
-package validator;
+package oop.ex6.validator;
 
 import java.util.ArrayList;
 

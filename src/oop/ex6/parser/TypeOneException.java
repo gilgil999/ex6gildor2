@@ -1,4 +1,4 @@
-package parser;
+package oop.ex6.parser;
 
 public class TypeOneException extends Exception {
     /**

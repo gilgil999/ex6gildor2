@@ -1,5 +1,5 @@
-package validator;
-import parser.TypeOneException;
+package oop.ex6.validator;
+import oop.ex6.parser.TypeOneException;
 
 import java.util.*;
 

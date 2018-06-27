@@ -1,7 +1,7 @@
-package validator;
+package oop.ex6.validator;
 import java.util.ArrayList;
 
-import parser.MainParser;
+import oop.ex6.parser.MainParser;
 
 public class FunctionObj {
     /**

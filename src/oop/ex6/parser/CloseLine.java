@@ -1,6 +1,6 @@
-package parser;
+package oop.ex6.parser;
 
-import validator.CodeSegment;
+import oop.ex6.validator.CodeSegment;
 
 public class CloseLine implements RawLine {
     /**

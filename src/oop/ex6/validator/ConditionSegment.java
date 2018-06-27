@@ -1,11 +1,11 @@
-package validator;
+package oop.ex6.validator;
 
-import parser.MainParser;
-import parser.TypeOneException;
+import oop.ex6.parser.MainParser;
+import oop.ex6.parser.TypeOneException;
 
 import java.util.ArrayList;
 
-import static parser.MainParser.isCompatible;
+import static oop.ex6.parser.MainParser.isCompatible;
 
 public class ConditionSegment extends CodeSegment {
     /**

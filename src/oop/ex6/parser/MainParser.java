@@ -1,6 +1,6 @@
-package parser;
+package oop.ex6.parser;
 
-import validator.*;
+import oop.ex6.validator.*;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -41,7 +41,7 @@ public class MainParser {
     private static final String CHECK_FUNC_LINE = "(?:" + space + "void" + "\\s+" + NAME_METHOD_VALDIATION + space + CHECK_PARAM + ")"; // (?:\s*(?:void|(?:int|String|char|double|boolean))\s+[a-zA-Z]+[a-zA-Z0-9_]*\s*(?:[(](?:(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*(?:\s*(?:int|String|char|double|boolean)\s+(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*)[)]\s*\{\s*))
     private static final String ASSIGNMENT = "(?:" + space + "(" + NAME_VAR_VALDIATION + ")" + space + "=" + space + "(" + CONTENT + "|" + NAME_VAR_VALDIATION + ")" + space + ")"; //(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)
     private static final String CHECK_ASSIGNMENT = space + FINAL + "?" + space + CHECK_TYPE + "\\s+" + "(?:(?:(?:\\s*" + ASSIGNMENT + "\\s*|" + NAME_VAR_VALDIATION + "\\s*),\\s*)*\\s*" + "(?:\\s*" + ASSIGNMENT + "\\s*|\\s*" + NAME_VAR_VALDIATION + "\\s*);\\s*)"; // (?:final\s+)?\s*(?:int|String|char|double|boolean)\s+(?:(?:(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*),)*\s*(?:\s*(?:\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*=\s*(?:(?:\d+(?:.\d+)?)|(?:true|false)|"\S*"|(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*))\s*)\s*|\s*(?:_[a-zA-Z0-9_]+|[a-zA-Z]+[a-zA-Z0-9_]*)\s*);\s*)
-    private static final String ASSIGN_WITHOUTH_DEC = space + ",?(" + NAME_VAR_VALDIATION + ")" + space + "(?:,|;)";
+    private static final String ASSIGN_WITHOUTH_DEC = space + ",?" +space+"(" + NAME_VAR_VALDIATION + ")" + space + "(?:,|;)";
     private static final String FUNC_CALL = space + NAME_METHOD_VALDIATION + space + "\\((?:" + space + NAME_VAR_VALDIATION + space + "|" + space + CONTENT + space + ",)*" + space + "(?:" + NAME_VAR_VALDIATION + "|" + CONTENT + ")?" + space + "\\)" + space + ";" + space;
 
     /**
@@ -100,7 +100,6 @@ public class MainParser {
                 //a codesegment end and we now we go back to adding stuff to its parent
                 if (currentParent == null)
                     //we are already in the globalsegment
-                    //todo exception
                     throw new TypeOneException();
                     ////System.out.println("a closing without an opening");
                 else

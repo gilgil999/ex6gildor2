@@ -1,6 +1,6 @@
-package parser;
+package oop.ex6.parser;
 
-import validator.*;
+import oop.ex6.validator.*;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package validator;
+package oop.ex6.validator;
 
 public abstract class Singleline implements Checkable {
     /**

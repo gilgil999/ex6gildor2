@@ -1,7 +1,6 @@
-package parser;
+package oop.ex6.parser;
 
-import validator.Checkable;
-import validator.CodeSegment;
+import oop.ex6.validator.Checkable;
 
 public interface RawLine {
     /**

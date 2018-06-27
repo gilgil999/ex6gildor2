@@ -1,7 +1,7 @@
-package parser;
+package oop.ex6.parser;
 
-import validator.Checkable;
-import validator.ReturnLine;
+import oop.ex6.validator.Checkable;
+import oop.ex6.validator.ReturnLine;
 
 public class RawReturn implements RawLine {
     /**

@@ -1,12 +1,11 @@
 package oop.ex6;
 
-import parser.MainParser;
-import parser.TypeOneException;
-import validator.GlobalSegment;
-import validator.ScopeObj;
+import oop.ex6.parser.MainParser;
+import oop.ex6.parser.TypeOneException;
+import oop.ex6.validator.GlobalSegment;
+import oop.ex6.validator.ScopeObj;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class Sjavac {
         if (args.length != 1) {
             System.out.println("2");
             System.err.println("Please specify the path");
-            //ioexception
+            return;
         }
         String path = args[0];
         try{

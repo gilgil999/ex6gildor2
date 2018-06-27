@@ -1,9 +1,7 @@
-package parser;
-import java.util.ArrayList;
-import validator.VarObj;
-import validator.CodeSegment;
-import validator.FunctionObj;
-import validator.FunctionSegment;
+package oop.ex6.parser;
+import oop.ex6.validator.CodeSegment;
+import oop.ex6.validator.FunctionObj;
+import oop.ex6.validator.FunctionSegment;
 
 public class OpenFunction implements RawLine {
     /**

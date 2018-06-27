@@ -1,6 +1,6 @@
-package validator;
+package oop.ex6.validator;
 
-import parser.TypeOneException;
+import oop.ex6.parser.TypeOneException;
 
 public class FunctionSegment extends CodeSegment {
     /**

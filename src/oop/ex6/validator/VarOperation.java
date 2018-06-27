@@ -1,6 +1,6 @@
-package validator;
+package oop.ex6.validator;
 
-import parser.MainParser;
+import oop.ex6.parser.MainParser;
 
 public class VarOperation {
     /**

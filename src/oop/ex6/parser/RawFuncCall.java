@@ -1,8 +1,8 @@
-package parser;
+package oop.ex6.parser;
 
-import validator.Checkable;
-import validator.FuncCall;
-import validator.VarInstance;
+import oop.ex6.validator.Checkable;
+import oop.ex6.validator.FuncCall;
+import oop.ex6.validator.VarInstance;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,5 @@
-gilgil999,*********
+gilgil999
+dortirosh
 
 =====================================================
 classes:
@@ -6,7 +7,7 @@ classes:
 +++main package+++
 Sjavac.java - this is the main class of the project
 
-+++parser package+++
++++oop.ex6.parser package+++
 BadLineException.java - this exception is thrown whenever there is an error in the files parsing
 CloseLine.java - this class is a representation of a line with a closing bracket
 MainParser.java - this class does all of the parsing of the files lines, it then converts it to a Checkable object
@@ -18,7 +19,7 @@ RawReturn.java - this class is rawline representation of  a return line
 TypeOneException.java - this Exception is thrown whenever there is a bug in the programs logic
 VarDeceleration.java -  this class is a rawline representation of a variable deceleration\assignment line
 
-+++validator package+++
++++oop.ex6.validator package+++
 Checkable.java - this interface is the interface of all of the objects in our project that can be checked to see if they are
                  logically valid
 CodeSegment.java - this class represents all the codesegments that contain other lines

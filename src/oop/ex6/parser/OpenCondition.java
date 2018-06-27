@@ -1,8 +1,8 @@
-package parser;
+package oop.ex6.parser;
 import java.util.ArrayList;
-import validator.CodeSegment;
-import validator.ConditionSegment;
-import validator.VarInstance;
+import oop.ex6.validator.CodeSegment;
+import oop.ex6.validator.ConditionSegment;
+import oop.ex6.validator.VarInstance;
 
 public class OpenCondition implements RawLine {
     /**
